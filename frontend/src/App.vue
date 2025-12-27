@@ -3,7 +3,6 @@
     import Papa from 'papaparse'
 
     import BackButton from './components/BackButton.vue'
-    import SideModule from './components/SideModule1.vue'
     import Menu from './components/Menu.vue'
     import Lab from './components/Lab.vue'
     import Loader from './components/Loading1.vue'
