@@ -35,9 +35,9 @@ import { preProcessFile } from 'typescript'
                                 id: row.id ? Number(row.id) : index + 1,  // si id existe dans CSV, sinon auto-incrément
                                 name: row.name || '',                      // nom depuis CSV
                                 img: row.img || 'default.png',             // fallback image
-                                bg: row.bg,
-                                descr: row.descr,
-                                color: row.color
+                                link: row.link || '#',
+                                descr: row.descr || 'missing app description',
+                                color: row.color || 'black'
                            
                                 }))
                         console.log(buttons.value)
