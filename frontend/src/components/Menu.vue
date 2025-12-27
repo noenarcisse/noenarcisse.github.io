@@ -17,7 +17,7 @@
     function calcGrid()
     {
         let l = props.buttons.length;
-        let gridSize = Math.ceil(l / 1);
+        let gridSize = Math.ceil(l / 2);
 
         console.log("l=" + l);
         console.log("grid = " + gridSize);
@@ -54,20 +54,14 @@
 
 <style scoped>
     .parent {
-        max-width: 100%;
-        /* justify-content: center; */
+        margin:auto;
+        max-width: 40%;
+        justify-content: center;
         display: grid;
 
         grid-template-columns: repeat(3, 1fr);
     
-/*        grid-template-areas:
-            "a b b c"
-            "a d e f";*/
-        gap: 2px;
-
-        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-        -moz-box-sizing: border-box; /* Firefox, other Gecko */
-        box-sizing: border-box; /* Opera/IE 8+ */
+        gap: 50px;
     }
 
     .corner-t-l {
