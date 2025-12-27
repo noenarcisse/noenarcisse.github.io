@@ -1,11 +1,291 @@
-<script setup></script>
+<script setup>
+    
+    import Papa from 'papaparse'
+
+    import BackButton from './components/BackButton.vue'
+    import SideModule from './components/SideModule1.vue'
+    import Menu from './components/Menu.vue'
+    import Lab from './components/Lab.vue'
+    import Loader from './components/Loading1.vue'
+    // import UserProfile from './components/UserProfile.vue'
+
+	import { ref } from 'vue'
+import { preProcessFile } from 'typescript'
+
+    const prenom = ref("Noe")
+	  const nom = ref("Narcisse")
+
+    const buttons = ref([])
+    const dataLoaded = ref(false)
+    
+    const link = ref("https://docs.google.com/spreadsheets/d/e/2PACX-1vQx_XlO6VRfyXA4UOBFnTaWLwds1vpF7pMHFVG5RQpau7cRMUmVijl5jdx05j3VMdLV-66-aYOcMtRy/pub?gid=0&single=true&output=csv")
+
+
+			Papa.parse(link.value,
+				{
+					header: true,						// use a header kept in the very first line 
+					download: true,
+					//encoding : 'windows-1252',		//win old encoding for excell 2007  ANSI :<,
+					encoding : 'UTF-8',					//csv file from g sheets are in utf
+					skipEmptyLines: true,				//remove the last empty line, does not remove any other one despite the actual name of the param
+					complete: function(results) 
+					{
+						console.log(results.data)		// Array d'objets
+                              buttons.value = results.data.map((row, index) => ({
+                                id: row.id ? Number(row.id) : index + 1,  // si id existe dans CSV, sinon auto-incrément
+                                name: row.name || '',                      // nom depuis CSV
+                                img: row.img || 'default.png',             // fallback image
+                                bg: row.bg,
+                                descr: row.descr
+                           
+                                }))
+                        console.log(buttons.value)
+                        dataLoaded.value = true;
+
+					}
+				});
+
+
+const activeAppId = ref(0)
+const activeApp = ref(null)
+
+
+function setActiveApp(id)
+{
+    activeAppId.value = id;
+
+    activeApp.value = buttons.value.find(btn => btn.id === id)
+        // alert('Selected APP : '+ activeApp.value.name)
+        console.log('Selected APP : '+ activeAppId.value)
+
+    
+}
+
+function showMenu()
+{
+        activeAppId.value=0;
+        activeApp.value = null;
+
+        console.log("BACK")
+}
+
+
+
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+    <div id="blur-overlay" style="">
+        <div class="container">
+            <div class="header" style="">
+                <div class="header-l-box">
+                  <div>{{ prenom }}</div>
+                  <div>{{ nom }}</div>
+                </div>
+                <div class="header-r-box">
+                  infos
+                </div>
+
+            </div>
+
+            <!-- <div v-if="false" id="content"> -->
+            <div v-if="dataLoaded" id="content">
+                <!-- <div class="side-module">
+                    <SideModule />
+                </div> -->
+                <div v-if="activeAppId == 1">
+                    <BackButton @back="showMenu" />
+                    CopyPasta<br/>
+                </div>
+                <div v-else-if="activeAppId == 4">
+                    <BackButton @back="showMenu" />
+                    <Lab />
+                </div>
+                <div v-else id="app-menu">
+                    <Menu :buttons="buttons" @app-selected="setActiveApp"></Menu>
+                </div>
+
+
+            </div>
+            <div v-else>
+                    <Loader />
+            </div>
+        </div>
+
+    </div>
+
+
 </template>
 
-<style scoped></style>
+<style>
+
+    :root {
+        --white: rgb(213, 215, 223);
+        --yellow: #E2B61B;
+        --gray: #323232;
+        --black: black;
+
+        --header: rgb(88, 60, 153);
+        --app-bg: black;
+
+        --radius: 20px;
+
+        --glass-alpha: .6;
+    }
+
+    *{
+        box-sizing: border-box;
+    }
+    
+    html, body {
+        height: 100%;
+        margin:0px;
+    }
+
+    body {
+        background: url('JumpComicsJJL7.png');
+
+        background: #b1e0f2;
+        background: linear-gradient(86deg,rgba(177, 224, 242, 1) 0%, rgba(255, 247, 173, 1) 100%);
+        background:linear-gradient(0deg, #cbb6d3 30%, #a7a6c7 100%);
+
+}
+
+    @keyframes colorShift {
+        0% {
+            background-color: rgba(186, 45, 32, var(--glass-alpha));
+        }
+
+        15% {
+            background-color: rgba(245, 187, 39, var(--glass-alpha));
+        }
+
+        30% {
+            background-color: rgba(69, 189, 68, var(--glass-alpha));
+        }
+
+        45% {
+            background-color: rgba(68, 189, 167, var(--glass-alpha));
+        }
+
+        60% {
+            background-color: rgba(89, 120, 212, var(--glass-alpha));
+        }
+
+        75% {
+            background-color: rgba(169, 68, 201, var(--glass-alpha));
+        }
+
+        85% {
+            background-color: rgba(201, 68, 159, var(--glass-alpha));
+        }
+
+        100% {
+            background-color: rgba(186, 45, 32, var(--glass-alpha));
+        }
+    }
+
+    #blur-overlay {
+        width: 100%;
+        height: 100%;
+        min-height: 100vh;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        backdrop-filter: blur(8px);
+
+
+
+        /* animation-name: colorShift;
+        animation-duration: 120s;
+        animation-iteration-count: infinite; */
+
+    }
+
+    .container 
+    {
+        width: 94%;
+        min-height: 90vh;
+        background-color: var(--white);
+        margin: auto;
+
+        border-radius: 10px;
+
+        backdrop-filter: blur(20px);
+        box-shadow: 10px 10px 50px #000000ab ;
+
+    }
+
+/* HEADER */
+    .header 
+    {
+        padding:1%;
+        display: flex;
+        background-color: var(--header);
+
+        border-bottom: 6px double var(--white);
+    }
+    /* debug */
+    /* .header div
+    {
+        border: 1px solid red;
+    } */
+    .logo
+    {
+        flex: 1;
+        font-family: Tahoma;
+        font-variant: small-caps;
+        font-size: 20px;
+        color:var(--white);
+    }
+    .header-l-box
+    {
+        flex: 8;
+        font-family: Tahoma;
+        font-variant: small-caps;
+        font-size: 42px;
+        color:var(--white);
+        text-align: center;
+    }
+    .header-r-box
+    {
+        flex:2;
+        align-content: center;
+    }
+
+    #content 
+    {
+        padding:2%;
+        display: flex;
+        align-content:center;
+        width:100%;
+
+                -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box; /* Firefox, other Gecko */
+        box-sizing: border-box; /* Opera/IE */
+    }
+
+    .side-module {
+        flex: 1 1 10%;
+        display: flex;
+        justify-content:space-evenly;
+
+                -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box; /* Firefox, other Gecko */
+        box-sizing: border-box; /* Opera/IE */
+        
+
+    }
+
+    #app-menu {
+        flex: 2 1 auto;
+        padding:2%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+</style>
+
+<style scoped>
+
+    
+</style>
