@@ -23,6 +23,7 @@ export default defineConfig({
   base: '/', // '/' si le site est à la racine de github.io
   build: {
     outDir: path.resolve(__dirname, '../docs') // <-- build ira directement dans docs à la racine
+	emptyOutDir: true // clear the previous build
   }
   
 })
