@@ -40,7 +40,7 @@
 
 .lds-ring {
   /* change color here */
-  color: var(--white);
+  color: var(--gray);
 }
 .lds-ring,
 .lds-ring div {
