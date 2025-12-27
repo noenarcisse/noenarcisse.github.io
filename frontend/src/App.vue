@@ -142,8 +142,6 @@ function showMenu()
 
     body 
     {
-        background: url('JumpComicsJJL7.png');
-
         background: #b1e0f2;
         background: linear-gradient(86deg,rgba(177, 224, 242, 1) 0%, rgba(255, 247, 173, 1) 100%);
         background:linear-gradient(0deg, #cbb6d3 30%, #a7a6c7 100%);
