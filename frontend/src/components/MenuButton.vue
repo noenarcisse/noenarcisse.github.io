@@ -31,24 +31,34 @@ import { ref } from 'vue'
 
     function changeColor(event)
     {
+        console.log(event.target.getAttribute('data-color'))
 
-        timeout = setTimeout(function() {
+        event.target.children[0].children[0].style.backgroundColor = event.target.getAttribute('data-color')
+        event.target.children[1].style.color = event.target.getAttribute('data-color')
 
-        let rand = Math.floor((Math.random()*randomColors.length));
-        event.target.style="background-color: "+randomColors[rand]+";";
 
-        event.target.style="background: linear-gradient(0deg, color-mix(in srgb, "+randomColors[rand]+" "+alpha+"%, transparent) 20%, rgba(0,0,0, 0) 100%);"
-        },
-        delay);
+        // timeout = setTimeout(function() {
+
+        // let rand = Math.floor((Math.random()*randomColors.length));
+        // event.target.style="background-color: "+randomColors[rand]+";";
+
+        // event.target.style="background: linear-gradient(0deg, color-mix(in srgb, "+randomColors[rand]+" "+alpha+"%, transparent) 20%, rgba(0,0,0, 0) 100%);"
+        // },
+        // delay);
+
+
 
     }
     function revertColor(event)
     {
-        if(timeout)
-        {
-            clearTimeout(timeout);
-        }
-        event.target.style=backgroundGradient.value;
+        event.target.children[0].children[0].style.backgroundColor = 'black'
+        event.target.children[1].style.color = 'black'
+
+        // if(timeout)
+        // {
+        //     clearTimeout(timeout);
+        // }
+        // event.target.style=backgroundGradient.value;
     }
 
 // SENDERS
@@ -61,15 +71,17 @@ import { ref } from 'vue'
     //faut debug l'ajout de background avec la refonte du css avec anim
 //:style="backgroundGradient" @mouseleave="revertColor" @mouseenter="changeColor"
 
+//:style="{ backgroundColor: item.color }"
+//:style="{ color: item.color }"
 
 </script>
 
 <template>
-        <div    @click="handleClick"  :class="item.gridId+' gridDivs '" :data-link="item.link">
+        <div @mouseenter="changeColor" @mouseleave="revertColor" @click="handleClick"  :class="item.gridId+' gridDivs '" :data-color="item.color" :data-link="item.link">
                     <div>
-                        <img :style="{ backgroundColor: item.color }" :src="item.img" />
+                        <img  :src="item.img" />
                     </div>
-                    <div :style="{ color: item.color }">
+                    <div >
                         {{item.name}}
                     </div>
        
@@ -136,15 +148,19 @@ import { ref } from 'vue'
         }
         40%
         {
-            padding: 40px;  
-        }
-        80%
-        {
             padding: 20px;
         }
-        90%
+        60%
         {
             padding: 10px;
+        }
+        70%
+        {
+            padding: 22px;
+        }
+        85%
+        {
+            padding: 16px;
         }
         100%
         {
