@@ -76,10 +76,17 @@ const activeApp = ref(null)
 
 function setActiveApp(id)
 {
-  //DO NOTHING FOR NOW
-    // activeAppId.value = id;
-    // activeApp.value = buttons.value.find(btn => btn.id === id)
-     console.log('Selected APP : '+ activeAppId.value)
+    console.log(id);
+    activeAppId.value = id;
+    activeApp.value = buttons.value.find(btn => btn.id === id)
+
+    console.log('Selected app ID : '+ activeAppId.value)
+    console.log('Selected APP : '+ activeApp.value)
+
+    console.log('Link : '+ activeApp.value.link)
+
+    if(!(activeApp.value.link === "#"))
+        window.open(activeApp.value.link, "_blank")
 
     
 }

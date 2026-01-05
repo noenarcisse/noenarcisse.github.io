@@ -36,29 +36,11 @@ import { ref } from 'vue'
         event.target.children[0].children[0].style.backgroundColor = event.target.getAttribute('data-color')
         event.target.children[1].style.color = event.target.getAttribute('data-color')
 
-
-        // timeout = setTimeout(function() {
-
-        // let rand = Math.floor((Math.random()*randomColors.length));
-        // event.target.style="background-color: "+randomColors[rand]+";";
-
-        // event.target.style="background: linear-gradient(0deg, color-mix(in srgb, "+randomColors[rand]+" "+alpha+"%, transparent) 20%, rgba(0,0,0, 0) 100%);"
-        // },
-        // delay);
-
-
-
     }
     function revertColor(event)
     {
         event.target.children[0].children[0].style.backgroundColor = 'black'
         event.target.children[1].style.color = 'black'
-
-        // if(timeout)
-        // {
-        //     clearTimeout(timeout);
-        // }
-        // event.target.style=backgroundGradient.value;
     }
 
 // SENDERS
