@@ -42,7 +42,6 @@ function isImage(fileName: string): boolean {
 </script>
 
 <template>
-    <div v-if="isDevMode">DEVMODE</div>
     <div v-if="project.isShown || (project.isShownDev && isDevMode)" class="container-project" :class="props.pair ? 'pair' : ''">
         <h1>{{ project.title }}</h1>
         <div class="flex-container" :class="props.pair ? 'reversed' : ''">
@@ -81,6 +80,7 @@ function isImage(fileName: string): boolean {
 
 <style scoped>
 .container-project {
+    margin-bottom: 20px;
     padding-top: 40px;
     padding-bottom: 80px;
 
@@ -92,10 +92,12 @@ function isImage(fileName: string): boolean {
     font-family: Roboto;
     font-size: 11px;
     border-bottom: 1px solid var(--gray);
+
+    background-color: rgb(29, 29, 29);
 }
 
 .pair {
-    background-color: black;
+    background-color: black !important;
 }
 
 .flex-container {

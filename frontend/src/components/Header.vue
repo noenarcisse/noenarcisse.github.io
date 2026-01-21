@@ -5,19 +5,25 @@
 <template>
     <div class="header" style="">
         <div class="header-l-box">
-            <img src="/nn-logo.png" />
+            <img src="/nn-logo-white.png" />
         </div>
         <div class="header-m-box">
-            <div class="menu">
+            <!-- <div class="menu">
                 <div class="menu-btn">
                     <a href="#">Home</a>
                 </div>
                 <div class="menu-btn">
                     <a href="#">Resume</a>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="header-r-box">
+            <div class="socials">
+                <a href="https://github.com/noenarcisse"><img class="icon" src="/github_icon.png" /> Github</a>
+            </div>
+            <div class="socials">
+                <a href="https://kvall.itch.io/"><img class="icon" src="/itchio_icon.png" /> Itch.io</a>
+            </div>
         </div>
     </div>
 
@@ -31,7 +37,6 @@
 }
 
 .header-l-box {
-        border:1px solid red;
     flex: 2;
 
     text-align: left;
@@ -53,15 +58,12 @@
 
 .header-m-box
 {
-    border:1px solid red;
-
     flex: 5;
     align-content: center;
     border-bottom: 1px solid var(--gray);  
 }
 
 .header-r-box {
-        border:1px solid red;
     flex: 4;
     align-content: center;
     border-bottom: 1px solid var(--gray);
@@ -75,8 +77,6 @@
 }
 .menu-btn
 {
-    border:1px solid green;
-
     flex:1;
 
     padding:15px;
@@ -100,5 +100,25 @@
 {
     color: var(--white);
     text-decoration: none;
+}
+
+.socials
+{
+    margin:auto;
+    max-width: 30%;
+    padding:10px;
+}
+.socials a, a:active
+{
+    color:var(--white);
+    font-family: Roboto;
+    font-size: 14px;
+    text-decoration: none;
+}
+.icon
+{
+    width:25px;
+    vertical-align: middle;
+    margin-right: 20px;
 }
 </style>
