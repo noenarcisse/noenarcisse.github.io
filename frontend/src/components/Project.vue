@@ -49,20 +49,30 @@
 }
 .descr
 {
-    flex:1;
+    flex:2;
 }
 .visual
 {
-    border: 1px solid red;
-    flex:1;
+    border: 1px solid rgb(194, 194, 194);
+    border-radius: 10px;
+    background-color: rgb(93, 93, 93);
+    text-align: center;
+
+    flex:3;
 }
 
 
 
 
 h1 {
+    padding-bottom: 10px;
+
+    max-width: 35%;
+    border-bottom: 1px solid var(--yellow);
+
     color: var(--white);
     font-family: 'Noto Sans';
+    font-family: Helvetica, sans-serif;  
 }
 
 h2 {}

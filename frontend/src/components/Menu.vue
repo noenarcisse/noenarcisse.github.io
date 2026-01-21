@@ -41,12 +41,12 @@
 
     <div ref="grid" id="menu-grid" class="parent" :style="gridCol">
 
-        <MenuButton v-for="b in props.buttons"
+        <!-- <MenuButton v-for="b in props.buttons"
                     :item="b"
 
                     @select-app="onSelectApp"
                     >
-        </MenuButton>
+        </MenuButton> -->
 
                             <!-- :key="b.id" ne pas refact ca, ca doit sauter  -->
     </div>

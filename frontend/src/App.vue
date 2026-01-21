@@ -3,13 +3,14 @@
     import Papa from 'papaparse'
 
     import Loader from './components/Loading1.vue'
+    import Header from './components/Header.vue'
     import Band from './components/Project.vue'
 
 	import { ref } from 'vue'
     import { preProcessFile } from 'typescript'
 
     const prenom = ref<string>("Noe")
-	  const nom = ref<string>("Narcisse")
+	const nom = ref<string>("Narcisse")
 
     //const buttons = ref([])
     //temp repasser en false default apres tests
@@ -70,18 +71,11 @@
 			// 		}
 			// 	});
 
-
-
 </script>
 
 <template>
-    <div class="header" style="">
-        <div class="header-l-box">
-            <img src="/nn-logo.png" />
-        </div>
-        <div class="header-r-box">
-        </div>
-    </div>
+
+    <Header />
 
     <div v-if="isDataLoaded" id="content">
         <Band />
@@ -168,45 +162,6 @@
 
     }
 
-/* HEADER */
-    .header 
-    {
-        padding:1%;
-        display: flex;
-        background-color: var(--white);
-    }
-    /* debug */
-    /* .header div
-    {
-        border: 1px solid red;
-    } */
-    .header-l-box
-    {
-        flex: 8;
-
-        text-align: left;
-
-        color: var(--gray);
-        font-family: TrajanPro Tahoma;
-        font-variant: small-caps;
-        font-size: 52px;
-        font-weight: bold;
-
-                border-bottom:1px solid var(--gray);
-
-    }
-    .header-l-box img
-    {
-      width:30%;
-
-    }
-
-    .header-r-box
-    {
-        flex:2;
-        align-content: center;
-                border-bottom:1px solid var(--gray);
-    }
 
     #content 
     {
