@@ -14,8 +14,9 @@ const props = defineProps<
 
 const videoUrl = ref<string>('/videos/')
 const imgUrl = ref<string>('/images/')
-const videoPlayer = ref<HTMLVideoElement | null>(null)
 
+//          VIDEOS
+const videoPlayer = ref<HTMLVideoElement | null>(null)
 function autoPlay() {
     if (videoPlayer.value)
         videoPlayer.value.play();
@@ -25,6 +26,7 @@ function autoPause() {
         videoPlayer.value.pause();
 }
 
+//          Files types checks
 function isVideo(fileName: string): boolean {
     const reg: RegExp = /.mp4$/gi
     return reg.test(fileName);
@@ -37,7 +39,6 @@ function isImage(fileName: string): boolean {
 </script>
 
 <template>
-
     <div class="container-project" :class="props.pair ? 'pair' : ''">
         <h1>{{ project.title }}</h1>
         <div class="flex-container" :class="props.pair ? 'reversed' : ''">

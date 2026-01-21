@@ -9,30 +9,30 @@ import Band from './components/Project.vue'
 import { ref } from 'vue'
 import { type Project, type RawProjectCSV } from './types/Project'
 
+//          VARS
 const projects = ref<Project[]>([])
-//temp repasser en false default apres tests
 const isDataLoaded = ref<boolean>(false)
 
-//string ?
-const infosData = ref([])
+//string ? unused for now right panel in the header to be done
+//const infosData = ref([])
 
 const link = ref<string>("https://docs.google.com/spreadsheets/d/e/2PACX-1vQx_XlO6VRfyXA4UOBFnTaWLwds1vpF7pMHFVG5RQpau7cRMUmVijl5jdx05j3VMdLV-66-aYOcMtRy/pub?gid=730308241&single=true&output=csv")
 const link2 = ref<string>('https://docs.google.com/spreadsheets/d/e/2PACX-1vQx_XlO6VRfyXA4UOBFnTaWLwds1vpF7pMHFVG5RQpau7cRMUmVijl5jdx05j3VMdLV-66-aYOcMtRy/pub?gid=2138789322&single=true&output=csv')
 
 /**
  * Typeguard simplifié pour vérifier les CSV en entrée
- * @param row 
+ * @param row - lines parsed from a CSV with papaparse
  */
 function isProject(row:any): row is RawProjectCSV
 {
     return (
         row !== null &&
-        typeof row === 'object'         &&
-        typeof row.title === 'string'   &&
-        typeof row.link === 'string'    &&
-        typeof row.stack === 'string'   &&
-        typeof row.objective === 'string'&&
-        typeof row.challenge === 'string'&&
+        typeof row === 'object'             &&
+        typeof row.title === 'string'       &&
+        typeof row.link === 'string'        &&
+        typeof row.stack === 'string'       &&
+        typeof row.objective === 'string'   &&
+        typeof row.challenge === 'string'   &&
         typeof row.solution === 'string'
 
     );
@@ -97,9 +97,7 @@ Papa.parse(link.value,
 </script>
 
 <template>
-
     <Header />
-
     <div v-if="isDataLoaded" id="content">
         <div v-for="project of projects">
             <Band :project="project" :pair="project.id % 2 == 0" />
@@ -200,5 +198,4 @@ body {
     flex: 1;
 }
 </style>
-
 <style scoped></style>
