@@ -2,20 +2,21 @@
 
 export interface Project
 {
-    id:number,
-    title:string,
-    link:string,
-    stack:string,
-    description: Description,
-    visual:string
+    id:number;
+    title:string;
+    link:string;
+    stack:string;
+    description: Description;
+    visual:string;
+    isShown:boolean;
 }
 
 
 export interface Description
 {
-    objective:string,
-    challenge:string,
-    solution:string
+    objective:string;
+    challenge:string;
+    solution:string;
 }
 
 export interface RawProjectCSV {
@@ -26,4 +27,5 @@ export interface RawProjectCSV {
     challenge?: string;
     solution?: string;
     visual?:string;
+    isShown:boolean;
 }

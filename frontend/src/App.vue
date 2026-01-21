@@ -33,7 +33,8 @@ function isProject(row:any): row is RawProjectCSV
         typeof row.stack === 'string'       &&
         typeof row.objective === 'string'   &&
         typeof row.challenge === 'string'   &&
-        typeof row.solution === 'string'
+        typeof row.solution === 'string'    &&
+        typeof row.isShown === 'string' && (Number(row.isShown) === 0 || Number(row.isShown) === 1)
 
     );
 }
@@ -65,7 +66,8 @@ Papa.parse(link.value,
                                             challenge:  row.challenge?.replace(/\n{3,}/g, '\n\n') || 'Challenge is missing',
                                             solution:   row.solution?.replace(/\n{3,}/g, '\n\n') || 'Solution is missing'
                                     },
-                                    visual: row.visual || ''
+                                    visual: row.visual || '',
+                                    isShown: Boolean(Number(row.isShown)) //omg js false == 0 != "0" == true evidemment
                                 }))
 
             isDataLoaded.value = true;

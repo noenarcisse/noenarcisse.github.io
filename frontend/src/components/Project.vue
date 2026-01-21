@@ -12,6 +12,9 @@ const props = defineProps<
     }
 >()
 
+
+console.log(props.project)
+
 const videoUrl = ref<string>('/videos/')
 const imgUrl = ref<string>('/images/')
 
@@ -39,7 +42,7 @@ function isImage(fileName: string): boolean {
 </script>
 
 <template>
-    <div class="container-project" :class="props.pair ? 'pair' : ''">
+    <div v-if="project.isShown === true" class="container-project" :class="props.pair ? 'pair' : ''">
         <h1>{{ project.title }}</h1>
         <div class="flex-container" :class="props.pair ? 'reversed' : ''">
             <div class="descr">
