@@ -10,6 +10,8 @@ import { ref } from 'vue'
 import { type Project, type RawProjectCSV } from './types/Project'
 
 //          VARS
+const isDevMode = import.meta.env.DEV
+
 const projects = ref<Project[]>([])
 const isDataLoaded = ref<boolean>(false)
 
@@ -34,7 +36,8 @@ function isProject(row:any): row is RawProjectCSV
         typeof row.objective === 'string'   &&
         typeof row.challenge === 'string'   &&
         typeof row.solution === 'string'    &&
-        typeof row.isShown === 'string' && (Number(row.isShown) === 0 || Number(row.isShown) === 1)
+        typeof row.isShown === 'string' && (Number(row.isShown) === 0 || Number(row.isShown) === 1) &&
+        typeof row.isShownDev === 'string' && (Number(row.isShownDev) === 0 || Number(row.isShownDev) === 1)
 
     );
 }
@@ -67,7 +70,8 @@ Papa.parse(link.value,
                                             solution:   row.solution?.replace(/\n{3,}/g, '\n\n') || 'Solution is missing'
                                     },
                                     visual: row.visual || '',
-                                    isShown: Boolean(Number(row.isShown)) //omg js false == 0 != "0" == true evidemment
+                                    isShown: Boolean(Number(row.isShown)), //omg js false == 0 != "0" == true evidemment
+                                    isShownDev: Boolean(Number(row.isShownDev))
                                 }))
 
             isDataLoaded.value = true;

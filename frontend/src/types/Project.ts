@@ -9,6 +9,7 @@ export interface Project
     description: Description;
     visual:string;
     isShown:boolean;
+    isShownDev:boolean;
 }
 
 
@@ -28,4 +29,5 @@ export interface RawProjectCSV {
     solution?: string;
     visual?:string;
     isShown:boolean;
+    isShownDev:boolean;
 }

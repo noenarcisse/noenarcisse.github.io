@@ -3,7 +3,7 @@
 import { type Project } from '@/types/Project'
 import { ref } from 'vue';
 
-//template band pour un projet
+const isDevMode = import.meta.env.DEV
 
 const props = defineProps<
     {
@@ -42,7 +42,8 @@ function isImage(fileName: string): boolean {
 </script>
 
 <template>
-    <div v-if="project.isShown === true" class="container-project" :class="props.pair ? 'pair' : ''">
+    <div v-if="isDevMode">DEVMODE</div>
+    <div v-if="project.isShown || (project.isShownDev && isDevMode)" class="container-project" :class="props.pair ? 'pair' : ''">
         <h1>{{ project.title }}</h1>
         <div class="flex-container" :class="props.pair ? 'reversed' : ''">
             <div class="descr">
