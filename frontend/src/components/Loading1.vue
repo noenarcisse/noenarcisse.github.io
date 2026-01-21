@@ -1,16 +1,6 @@
-<script setup>
+<script setup lang="ts">
     // https://loading.io/css/
     //https://github.com/loadingio/css-spinner/
-
-    import { ref } from 'vue'
-
-    const emit = defineEmits(['back'])
-
-    function backHandler()
-    {
-        emit('back')
-    }
-
 </script>
 
 <template>

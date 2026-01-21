@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
     import { ref } from 'vue'
     import MenuButton from './MenuButton.vue'
 
@@ -29,7 +29,7 @@
 
     const emit = defineEmits(['app-selected'])
 
-    function onSelectApp(id)
+    function onSelectApp(id:number)
     {
         emit('app-selected', id)
     }
@@ -43,10 +43,12 @@
 
         <MenuButton v-for="b in props.buttons"
                     :item="b"
-                    :key="b.id"
+
                     @select-app="onSelectApp"
                     >
         </MenuButton>
+
+                            <!-- :key="b.id" ne pas refact ca, ca doit sauter  -->
     </div>
 
 </template>

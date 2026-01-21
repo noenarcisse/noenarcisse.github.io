@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 
 import { ref } from 'vue'
 
@@ -8,7 +8,7 @@ import { ref } from 'vue'
     })
 
 
-    const classDescr = ref('')
+    const classDescr = ref<boolean>()
 
     function showDescription()
     {
