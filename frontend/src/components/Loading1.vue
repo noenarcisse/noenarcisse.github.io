@@ -30,7 +30,7 @@
 
 .lds-ring {
   /* change color here */
-  color: var(--gray);
+  color: var(--white);
 }
 .lds-ring,
 .lds-ring div {
