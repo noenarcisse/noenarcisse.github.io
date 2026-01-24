@@ -89,8 +89,8 @@ function isImage(fileName: string): boolean {
 
     color: var(--white);
 
-    font-family: Roboto;
-    font-size: 11px;
+    font-family: Roboto, 'Segoe UI', 'San Francisco', sans-serif;
+    font-size:12px;
     border-bottom: 1px solid var(--gray);
 
     background-color: rgb(29, 29, 29);
@@ -138,19 +138,27 @@ function isImage(fileName: string): boolean {
 h1 {
     padding-bottom: 10px;
 
-    max-width: 35%;
+    max-width: 50%;
     border-bottom: 1px solid var(--yellow);
 
     color: var(--white);
-    font-family: 'Noto Sans';
-    font-family: Helvetica, sans-serif;
+    /* font-family: 'Noto Sans'; */
+    font-family: 'trebuchet ms',sans-serif;
+    font-size: 32px;
+    font-weight: 100;
+    
 }
 
-h2 {}
+h2 
+{
+    font-family: 'trebuchet ms',sans-serif;
+    font-size: 22px;
+    font-weight: 100;
+}
 
-a,
-a:active {
+a ,a:active {
     color: var(--white);
+    font-size:12px;
 }
 
 a:hover {
