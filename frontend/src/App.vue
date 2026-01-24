@@ -5,6 +5,7 @@ import Papa from 'papaparse'
 import Loader from './components/Loading1.vue'
 import Header from './components/Header.vue'
 import Band from './components/Project.vue'
+import About from './components/About.vue'
 
 import { ref, type App } from 'vue'
 import { type Project, type RawProjectCSV, isProject } from './types/Project'
@@ -100,6 +101,7 @@ Papa.parse(data.links.body+data.links.files[0],
     <div v-else>
         <Loader />
     </div>
+    <About />
 </template>
 
 <style>
