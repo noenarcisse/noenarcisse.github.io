@@ -1,4 +1,4 @@
-import { ref, type Ref } from "vue";
+import { reactive, ref, type Ref } from "vue";
 import {type Project} from "@/types/Project";
 
 /**
@@ -10,8 +10,8 @@ export class AppData
 
     public readonly isDevMode:boolean = import.meta.env.DEV;
 
-    public projects:Ref<Project[]> = ref([]);
-    public isDataLoaded:Ref<boolean> = ref(false);
+    public projects:Project[] = [];
+    public isDataLoaded:boolean = false;
     public links: GoogleSheets;
 
     private constructor(urlBody:string)
@@ -29,7 +29,8 @@ export class AppData
             if(!body)
                 throw new Error("AppData has not been initialized yet!");
 
-            this._instance = new AppData(body);
+            this._instance = reactive(new AppData(body)) as AppData;
+            //this._instance = new AppData(body);
         }
         return this._instance;
     }

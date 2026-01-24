@@ -32,14 +32,14 @@ const link2 = ref<string>('https://docs.google.com/spreadsheets/d/e/2PACX-1vQx_X
  * Get the values from the published CSV and parse them.
  * Doublecheck is values are leggit and clear some \n issue from the sheet
  */
-Papa.parse(link.value,
+Papa.parse(data.links.body+data.links.files[0],
     {
         header: true,						// use a header kept in the very first line 
         download: true,
         encoding: 'UTF-8',					//csv file from g sheets are in utf
         skipEmptyLines: true,				//remove the last empty line, does not remove any other one despite the actual name of the param
         complete: function (results) {
-            console.log(results.data)		// json de string a repasser
+            //console.log(results.data)		// json de string a repasser
             const rawData = results.data as RawProjectCSV[]
 
             projects.value = rawData
@@ -60,7 +60,9 @@ Papa.parse(link.value,
                                     isShownDev: Boolean(Number(row.isShownDev))
                                 }))
 
-            isDataLoaded.value = true;
+            data.isDataLoaded=true;
+
+           // isDataLoaded.value = true;
 
         }
     });
@@ -90,7 +92,7 @@ Papa.parse(link.value,
 
 <template>
     <Header />
-    <div v-if="isDataLoaded" id="content">
+    <div v-if="data.isDataLoaded" id="content">
         <div v-for="project of projects">
             <Band :project="project" :pair="project.id % 2 == 0" />
         </div>
