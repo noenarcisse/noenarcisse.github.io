@@ -6,12 +6,18 @@ import Loader from './components/Loading1.vue'
 import Header from './components/Header.vue'
 import Band from './components/Project.vue'
 
-import { ref } from 'vue'
-import { type Project, type RawProjectCSV } from './types/Project'
+import { ref, type App } from 'vue'
+import { type Project, type RawProjectCSV, isProject } from './types/Project'
+import { AppData } from './types/AppData'
 
 //          VARS
-const isDevMode = import.meta.env.DEV
+const GOOGLESHEET_URL_BODY = "https://docs.google.com/spreadsheets/d/e/"
+const data:AppData = AppData.getInstance(GOOGLESHEET_URL_BODY)
 
+data.links.files.push("2PACX-1vQx_XlO6VRfyXA4UOBFnTaWLwds1vpF7pMHFVG5RQpau7cRMUmVijl5jdx05j3VMdLV-66-aYOcMtRy/pub?gid=730308241&single=true&output=csv")
+
+//mv appdata
+const isDevMode = import.meta.env.DEV
 const projects = ref<Project[]>([])
 const isDataLoaded = ref<boolean>(false)
 
@@ -21,26 +27,6 @@ const isDataLoaded = ref<boolean>(false)
 const link = ref<string>("https://docs.google.com/spreadsheets/d/e/2PACX-1vQx_XlO6VRfyXA4UOBFnTaWLwds1vpF7pMHFVG5RQpau7cRMUmVijl5jdx05j3VMdLV-66-aYOcMtRy/pub?gid=730308241&single=true&output=csv")
 const link2 = ref<string>('https://docs.google.com/spreadsheets/d/e/2PACX-1vQx_XlO6VRfyXA4UOBFnTaWLwds1vpF7pMHFVG5RQpau7cRMUmVijl5jdx05j3VMdLV-66-aYOcMtRy/pub?gid=2138789322&single=true&output=csv')
 
-/**
- * Typeguard simplifié pour vérifier les CSV en entrée
- * @param row - lines parsed from a CSV with papaparse
- */
-function isProject(row:any): row is RawProjectCSV
-{
-    return (
-        row !== null &&
-        typeof row === 'object'             &&
-        typeof row.title === 'string'       &&
-        typeof row.link === 'string'        &&
-        typeof row.stack === 'string'       &&
-        typeof row.objective === 'string'   &&
-        typeof row.challenge === 'string'   &&
-        typeof row.solution === 'string'    &&
-        typeof row.isShown === 'string' && (Number(row.isShown) === 0 || Number(row.isShown) === 1) &&
-        typeof row.isShownDev === 'string' && (Number(row.isShownDev) === 0 || Number(row.isShownDev) === 1)
-
-    );
-}
 
 /**
  * Get the values from the published CSV and parse them.
