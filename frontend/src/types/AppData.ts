@@ -10,8 +10,8 @@ export class AppData
 
     public readonly isDevMode:boolean = import.meta.env.DEV;
 
-    public projects: Ref<Project[]> = ref([]);
-    public isDataLoaded:boolean = false;
+    public projects:Ref<Project[]> = ref([]);
+    public isDataLoaded:Ref<boolean> = ref(false);
     public links: GoogleSheets;
 
     private constructor(urlBody:string)
