@@ -8,7 +8,7 @@ import Band from './components/Project.vue'
 
 import { ref, type App } from 'vue'
 import { type Project, type RawProjectCSV, isProject } from './types/Project'
-import { AppData } from './types/AppData'
+import { AppData } from './stores/AppData' 
 
 //          VARS
 const GOOGLESHEET_URL_BODY = "https://docs.google.com/spreadsheets/d/e/"
