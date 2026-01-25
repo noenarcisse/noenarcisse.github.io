@@ -2,13 +2,15 @@
 
 //about module
 
-const prods:string[] = [
-    "Blood Bar Tycoon", 
-    "Magic Forge Tycoon", 
-    "Berzerker Homestead", 
-    "Lights out!", 
-    "Star Fish Strumpfer"
-]
+const baseUrl:string = "/images/prods/"
+
+const prods:Record<string, string> = {
+    "Blood Bar Tycoon":         baseUrl+"bbt_mini.jpg", 
+    "Magic Forge Tycoon":       baseUrl+"mft_mini.jpg",
+    "Berzerker Homestead":      baseUrl+"bh_mini.jpg",
+    "Lights out!":              baseUrl+"lo_mini.jpg",
+    "Star Fish Strumpfer":      baseUrl+"sfs_mini.jpg"
+}
 
 const skills:string[] = [
     "Architecture & Logic",
@@ -50,7 +52,7 @@ const oldTechs:string[] = [
     <div class="about-section">
         <div class="container descr">
             <div class="about">
-                <div class="profile-picture"><img src="/avat-daphne.jpg" /></div>
+                <div class="profile-picture"><img src="/images/profile_pics/aod_mini.jpg" /></div>
                 <div class="name">Noe Narcisse</div>
                 <div class="email"><img src="/email_icon.png" class="small-icons"/><a href="noenarcisse.job@gmail.com">noenarcisse.job@gmail.com</a></div>
                 <div class="location"><img src="/location_icon.png" class="small-icons"/>Brussels, Belgium</div>
@@ -64,8 +66,11 @@ const oldTechs:string[] = [
         <div class="container">
             <div class="prod">
                 <h1>Released games</h1>
-                <div>
-                    <span v-for="prod of prods" class="list-elements">{{ prod }}</span>
+                <div class="prods">
+                    <div v-for="(value, key) of prods" class="list-prods">
+                        <img :src="value" /><br>
+                        {{ key }}
+                    </div>
                 </div>
             </div>
             <div class="skills">
@@ -174,6 +179,19 @@ a:hover {
     border-bottom: 1px solid gray;
 }
 
+.prods
+{
+    display:flex;
+    flex-direction: row;
+    gap:20px;
+}
+
+.list-prods img {
+    width: 200px;
+    border: 1px solid var(--white);
+    border-radius: 10px;
+}
+
 .skills {
     padding-bottom: 30px;
     margin-bottom: 50px;
@@ -181,6 +199,8 @@ a:hover {
 }
 
 .tech {}
+
+
 
 .list-elements
 {
