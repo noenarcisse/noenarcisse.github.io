@@ -54,7 +54,7 @@ const oldTechs:string[] = [
             <div class="about">
                 <div class="profile-picture"><img src="/images/profile_pics/aod_mini.jpg" /></div>
                 <div class="name">Noe Narcisse</div>
-                <div class="email"><img src="/email_icon.png" class="small-icons"/><a href="noenarcisse.job@gmail.com">noenarcisse.job@gmail.com</a></div>
+                <div class="email"><img src="/email_icon.png" class="small-icons"/><a href="mailto:noenarcisse.job@gmail.com">noenarcisse.job@gmail.com</a></div>
                 <div class="location"><img src="/location_icon.png" class="small-icons"/>Brussels, Belgium</div>
                 <p>
                     Software developer based in Brussels. <br>
