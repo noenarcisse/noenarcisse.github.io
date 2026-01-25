@@ -170,19 +170,6 @@ body {
     }
 }
 
-.container {
-    width: 94%;
-    min-height: 90vh;
-    background-color: var(--white);
-    margin: auto;
-
-    border-radius: 10px;
-
-    backdrop-filter: blur(20px);
-    box-shadow: 10px 10px 50px #000000ab;
-
-}
-
 
 #content {
     display: flex;

@@ -8,18 +8,10 @@
             <img src="/nn-logo-white.png" />
         </div>
         <div class="header-m-box">
-            <!-- <div class="menu">
-                <div class="menu-btn">
-                    <a href="#">Home</a>
-                </div>
-                <div class="menu-btn">
-                    <a href="#">Resume</a>
-                </div>
-            </div> -->
         </div>
         <div class="header-r-box">
             <div class="socials">
-                <a href="mailto:noenarcisse.job@gmail.com"><img class="icon" src="/mail-logo.png" />Email</a>
+                <a href="mailto:noenarcisse.job@gmail.com"><img class="icon" src="/email_icon.png" />Email</a>
             </div>
             <div class="socials">
                 <a href="https://github.com/noenarcisse"><img class="icon" src="/github_icon.png" />Github</a>
