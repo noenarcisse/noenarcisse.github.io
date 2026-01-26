@@ -13,17 +13,19 @@ const prods:Record<string, string> = {
 }
 
 const skills:string[] = [
-    "Architecture & Logic",
+    "Architecture",
+    "Logic",
     "Efficiency",
     "Fast Learning",
     "Organization",
+    "Communication",
     "Teamwork",
     "French",
     "English"
 ]
 const techs:string[] = [
     "C#",
-    "ASP.NET Core",
+    "ASP.NET",
     "LINQ",
     "Entity",
     "Javascript",
@@ -32,7 +34,7 @@ const techs:string[] = [
     "Node.js",
     "Github",
     "Plastic SCM",
-
+    "Unity3D"
 ]
 
 const oldTechs:string[] = [
@@ -75,14 +77,14 @@ const oldTechs:string[] = [
             </div>
             <div class="skills">
                 <h1>Skills</h1>
-                <div style="max-width:50%;">
+                <div class="list">
                     <span v-for="skill in skills" class="list-elements">{{ skill }}</span>
                 </div>
 
             </div>
             <div class="tech">
                 <h1>Languages & tech</h1>
-                <div>
+                <div class="list">
                     <span v-for="tech in techs" class="list-elements">{{ tech }}</span>
                     <p>Previously learned:</p>
                     <span v-for="item in oldTechs" class="list-elements">{{ item }}</span>
@@ -199,7 +201,10 @@ a:hover {
 
 .tech {}
 
-
+.list
+{
+    max-width:60%;
+}
 
 .list-elements
 {
