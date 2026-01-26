@@ -6,8 +6,6 @@ import { AppData } from '@/stores/AppData';
 
 const data = AppData.getInstance()
 
-const isDevMode = import.meta.env.DEV
-
 const props = defineProps<
     {
         pair: boolean,
@@ -43,7 +41,8 @@ function isImage(fileName: string): boolean {
 
 <template>
     <div v-if="project.isShown || (project.isShownDev && data.isDevMode)" class="container-project" :class="props.pair ? 'pair' : ''">
-        <div class="project-logo">
+        <!-- <div class="project-logo" :style="`background-image: url('./${project.backgroundImage}');`"> -->
+            <div class="project-logo" :style="{ backgroundImage: 'url(/images/'+project.backgroundImage+')' }">
             <div class="colored-glass" :style="'background-color:'+project.color">
             <div class="logo"><img :src="'images/projects/'+project.logo" /></div>
             <div class="title">{{ project.title }}</div>
@@ -108,7 +107,7 @@ function isImage(fileName: string): boolean {
 .project-logo
 {
     flex:3;
-    background: url('/images/copypasta_screen.jpg');
+    /* background: url('/images/copypasta_screen.jpg'); */
 }
 .colored-glass
 {
@@ -118,7 +117,7 @@ function isImage(fileName: string): boolean {
     height:100%;
     background: rgba(105, 14, 110, 0.858);
 
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(10px);
 }
 .colored-glass div
 {

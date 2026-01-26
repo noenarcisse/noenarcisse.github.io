@@ -50,7 +50,7 @@ Papa.parse(data.links.body+data.links.files[0],
                                     isShownDev: Boolean(Number(row.isShownDev)),
                                     logo: row.logo || '/unitylogowhite.png', // a cleaner avec un vrai defautl logo a faire
                                     color: row.color || 'black',
-                                    backgroundImage: row.imgbg || '/images/copypasta_screen.jpg' //change proper default img here
+                                    backgroundImage: row.imgbg || 'copypasta_screen.jpg' //change proper default img here
                                 }))
 
             data.isDataLoaded=true;
