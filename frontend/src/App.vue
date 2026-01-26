@@ -17,18 +17,6 @@ const data:AppData = AppData.getInstance(GOOGLESHEET_URL_BODY)
 
 data.links.files.push("2PACX-1vQx_XlO6VRfyXA4UOBFnTaWLwds1vpF7pMHFVG5RQpau7cRMUmVijl5jdx05j3VMdLV-66-aYOcMtRy/pub?gid=730308241&single=true&output=csv")
 
-//mv appdata
-const isDevMode = import.meta.env.DEV
-const projects = ref<Project[]>([])
-const isDataLoaded = ref<boolean>(false)
-
-//string ? unused for now right panel in the header to be done
-//const infosData = ref([])
-
-const link = ref<string>("https://docs.google.com/spreadsheets/d/e/2PACX-1vQx_XlO6VRfyXA4UOBFnTaWLwds1vpF7pMHFVG5RQpau7cRMUmVijl5jdx05j3VMdLV-66-aYOcMtRy/pub?gid=730308241&single=true&output=csv")
-const link2 = ref<string>('https://docs.google.com/spreadsheets/d/e/2PACX-1vQx_XlO6VRfyXA4UOBFnTaWLwds1vpF7pMHFVG5RQpau7cRMUmVijl5jdx05j3VMdLV-66-aYOcMtRy/pub?gid=2138789322&single=true&output=csv')
-
-
 /**
  * Get the values from the published CSV and parse them.
  * Doublecheck is values are leggit and clear some \n issue from the sheet
@@ -43,7 +31,7 @@ Papa.parse(data.links.body+data.links.files[0],
             //console.log(results.data)		// json de string a repasser
             const rawData = results.data as RawProjectCSV[]
 
-            projects.value = rawData
+            data.projects = rawData
                                 .filter(isProject)
                                 .map((row, index:number):Project => ({
 
@@ -96,7 +84,7 @@ Papa.parse(data.links.body+data.links.files[0],
 <template>
     <Header />
     <div v-if="data.isDataLoaded" id="content">
-        <div v-for="project of projects">
+        <div v-for="project of data.projects">
             <Band :project="project" :pair="project.id % 2 == 0" />
         </div>
     </div>
