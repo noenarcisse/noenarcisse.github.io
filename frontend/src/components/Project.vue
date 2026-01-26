@@ -155,20 +155,16 @@ function isImage(fileName: string): boolean {
 }
 
 .visual {
-    /* border: 1px solid rgb(194, 194, 194);
-    border-radius: 10px;
-    background-color: rgb(93, 93, 93);
-    text-align: center; */
-
+    padding-top:20px;
     flex: 3;
 }
 .visual video
 {
-    max-width: 500px;
+    max-width: 600px;
 }
 .visual img
 {
-    max-width: 500px;
+    max-width: 600px;
 }
 
 
@@ -188,8 +184,11 @@ h1 {
 
 h2 
 {
+    margin-top:15px;
+    margin-bottom:10px;
+
     font-family: 'trebuchet ms',sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 100;
 }
 
