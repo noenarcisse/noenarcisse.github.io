@@ -188,7 +188,6 @@ a:hover {
 
 .list-prods img {
     width: 200px;
-    border: 1px solid var(--white);
     border-radius: 10px;
 }
 
@@ -213,7 +212,7 @@ a:hover {
     border:1px solid var(--yellow);
     border-radius: 5px;
 
-    color: var(--yellow);
+    color: var(--white);
     white-space: nowrap;
     text-transform: uppercase;
 
