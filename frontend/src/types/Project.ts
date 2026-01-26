@@ -4,12 +4,16 @@ export interface Project
 {
     id:number;
     title:string;
+    subtitle:string;
     link:string;
     stack:string;
     description: Description;
     visual:string;
     isShown:boolean;
     isShownDev:boolean;
+    logo:string;
+    color:string;
+    backgroundImage:string;
 }
 
 
@@ -22,6 +26,7 @@ export interface Description
 
 export interface RawProjectCSV {
     title?: string;
+    subtitle?:string;
     link?: string;
     stack?: string;
     objective?: string;
@@ -30,6 +35,9 @@ export interface RawProjectCSV {
     visual?:string;
     isShown:boolean;
     isShownDev:boolean;
+    logo?:string;
+    color?:string;
+    imgbg?:string;
 }
 
 /**
@@ -49,6 +57,8 @@ export function isProject(row:any): row is RawProjectCSV
         typeof row.solution === 'string'    &&
         typeof row.isShown === 'string' && (Number(row.isShown) === 0 || Number(row.isShown) === 1) &&
         typeof row.isShownDev === 'string' && (Number(row.isShownDev) === 0 || Number(row.isShownDev) === 1)
+
+        //add new data to guard here like logo and color
 
     );
 }

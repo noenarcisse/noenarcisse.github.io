@@ -43,8 +43,14 @@ function isImage(fileName: string): boolean {
 
 <template>
     <div v-if="project.isShown || (project.isShownDev && data.isDevMode)" class="container-project" :class="props.pair ? 'pair' : ''">
-        <h1>{{ project.title }}</h1>
-        <div class="flex-container" :class="props.pair ? 'reversed' : ''">
+        <div class="project-logo">
+            <div class="colored-glass" :style="'background-color:'+project.color">
+            <div class="logo"><img :src="'images/projects/'+project.logo" /></div>
+            <div class="title">{{ project.title }}</div>
+            </div>
+        </div>
+        <div class="project-descr" :class="props.pair ? 'reversed' : ''">
+            <h1>{{ project.subtitle }}</h1>
             <div class="descr">
                 <span v-if="project.link !== '#'"> Link: <a
                         href="https://github.com/noenarcisse/CodeSamples/blob/main/Csharp/Map.cs" target="_blank"
@@ -80,12 +86,10 @@ function isImage(fileName: string): boolean {
 
 <style scoped>
 .container-project {
-    margin-bottom: 20px;
-    padding-top: 40px;
-    padding-bottom: 80px;
 
-    padding-left: 10%;
-    padding-right: 10%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
 
     color: var(--white);
 
@@ -100,20 +104,54 @@ function isImage(fileName: string): boolean {
     background-color: black !important;
 }
 
-.flex-container {
-    display: flex;
-    flex-direction: row;
 
-    gap: 5%;
+.project-logo
+{
+    flex:3;
+    background: url('/images/copypasta_screen.jpg');
+}
+.colored-glass
+{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height:100%;
+    background: rgba(105, 14, 110, 0.858);
+
+    backdrop-filter: blur(7px);
+}
+.colored-glass div
+{
+    display: flex;
+    flex :1;
+    justify-content: center; 
+}
+.logo
+{
+    align-items: flex-end;
+}
+.title
+{
+    align-items:flex-start;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.logo img
+{
+    width: 150px;
 }
 
-.reversed {
-    flex-direction: row-reverse !important;
-    background-color: black;
+
+.project-descr {
+    flex:7;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top:1%;
+    padding-bottom:3%;
 }
 
 .descr {
-    flex: 2;
     white-space: pre-line;
 }
 
@@ -127,11 +165,11 @@ function isImage(fileName: string): boolean {
 }
 .visual video
 {
-    max-width: 720px;
+    max-width: 500px;
 }
 .visual img
 {
-    max-width: 720px;
+    max-width: 500px;
 }
 
 

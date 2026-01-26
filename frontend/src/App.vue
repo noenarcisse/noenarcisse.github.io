@@ -49,6 +49,7 @@ Papa.parse(data.links.body+data.links.files[0],
 
                                     id: index,
                                     title: row.title || 'Title missing',
+                                    subtitle: row.subtitle || 'subtitle missing',
                                     link: row.link || '#',
                                     stack: row.stack || 'Stack is missing',
                                     description: {
@@ -58,12 +59,13 @@ Papa.parse(data.links.body+data.links.files[0],
                                     },
                                     visual: row.visual || '',
                                     isShown: Boolean(Number(row.isShown)), //omg js false == 0 != "0" == true evidemment
-                                    isShownDev: Boolean(Number(row.isShownDev))
+                                    isShownDev: Boolean(Number(row.isShownDev)),
+                                    logo: row.logo || '/unitylogowhite.png', // a cleaner avec un vrai defautl logo a faire
+                                    color: row.color || 'black',
+                                    backgroundImage: row.imgbg || '/images/copypasta_screen.jpg' //change proper default img here
                                 }))
 
             data.isDataLoaded=true;
-
-           // isDataLoaded.value = true;
 
         }
     });
