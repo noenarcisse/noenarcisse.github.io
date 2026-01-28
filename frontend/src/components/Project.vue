@@ -52,7 +52,7 @@ function isImage(fileName: string): boolean {
             <h1>{{ project.subtitle }}</h1>
             <div class="descr">
                 <span v-if="project.link !== '#'"> Link: <a
-                        href="https://github.com/noenarcisse/CodeSamples/blob/main/Csharp/Map.cs" target="_blank"
+                        :href="project.link" target="_blank"
                         rel="noopener">{{ project.link }}</a><br>
                 </span>
 
