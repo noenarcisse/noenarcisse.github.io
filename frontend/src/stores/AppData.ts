@@ -35,6 +35,11 @@ export class AppData
     }
 }
 
+// si le fichier de ref est toujours le meme sheet, les files peuvent etre juste un ID qui est la page du doc
+//si y'a plusieur gooogle sheets, c'est un body + doc + id page 
+// pour l'instant ca reflete pas cette realité mais ca traite meme les pages comme
+// des docs séparés (ce qui est okay et consistant juste moins realiste)
+//ca cree quand meme des "files" string plus longs
 export interface GoogleSheets
 {
     readonly body:string;
