@@ -24,7 +24,7 @@ export interface Description
     solution:string;
 }
 
-export interface RawProjectCSV {
+export interface ProjectData {
     title?: string;
     subtitle?:string;
     link?: string;
@@ -44,7 +44,7 @@ export interface RawProjectCSV {
  * Typeguard simplifié pour vérifier les CSV en entrée
  * @param row - lines parsed from a CSV with papaparse
  */
-export function isProject(row:any): row is RawProjectCSV
+export function isProject(row:any): row is ProjectData
 {
     return (
         row !== null &&

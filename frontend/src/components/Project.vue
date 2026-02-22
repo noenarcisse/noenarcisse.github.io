@@ -3,6 +3,7 @@ import { ref } from 'vue';
 
 import { type Project } from '@/types/Project'
 import { AppData } from '@/stores/AppData';
+import { isVideo, isImage } from '@/models/Video';
 
 const data = AppData.getInstance()
 
@@ -25,16 +26,6 @@ function autoPlay() {
 function autoPause() {
     if (videoPlayer.value)
         videoPlayer.value.pause();
-}
-
-//          Files types checks
-function isVideo(fileName: string): boolean {
-    const reg: RegExp = /.mp4$/gi
-    return reg.test(fileName);
-}
-function isImage(fileName: string): boolean {
-    const reg: RegExp = /(\.png|jpe?g|webp|avif)$/gi
-    return reg.test(fileName);
 }
 
 </script>

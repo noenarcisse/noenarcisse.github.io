@@ -30,7 +30,6 @@ export class AppData
                 throw new Error("AppData has not been initialized yet!");
 
             this._instance = reactive(new AppData(body)) as AppData;
-            //this._instance = new AppData(body);
         }
         return this._instance;
     }
