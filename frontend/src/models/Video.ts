@@ -29,6 +29,22 @@ type Extension = ImageExtension | VideoExtension;
 export class Media
 {
     media : MediaTypes;
+    //TODO
+    static readonly allowedExtensions : {} = {
+        img : 
+        [
+            ".jpg",
+            ".jpg",
+            ".png"
+        ],
+        video : 
+        [
+            ".mp4"
+        ]
+    };
+
+    //TODO
+    private static readonly _allowedExtentionsRegex : RegExp = /(\.(png|jpe?g|mp4))$/i;
     
     constructor(url:string, alt?:string)
     { 
@@ -40,12 +56,9 @@ export class Media
         }
         else if(isImage(url))
         {
-
-            const ext = getExtension(url);
+            const ext = Media.getExtension(url);
             if(!ext)
-                throw new Error("Impossible");
-
-            
+                throw new Error("Could not extract the url from the url");
 
             this.media = this.media = {   url : url,
                         extension: ext,
@@ -54,14 +67,29 @@ export class Media
         }
         else
         {
-            throw new Error("Impossible");
+            throw new Error("Media error : The url is not recognized");
         }
     }
 
+    /**
+     * Extract the extension from the URL if if fits the Media allowed extensions
+     * @param url 
+     * @returns The extension if allowed, undefined otherwise
+     */
+    static getExtension(url:string) : Extension | undefined
+    {
+        const reg : RegExp = /(\.(png|jpe?g|mp4))$/i;
+        const match = url.match(reg);
+
+        if(!match)
+            return;
+
+        return match[0].toLowerCase() as Extension;
+    }
 
 }
 
-
+//TODO passer ca en static dans la classe, recup les regex de la source de verité de la class
 //Guards & utilities
 
 export function isVideo(fileName: string): boolean {
@@ -74,13 +102,3 @@ export function isImage(fileName: string): boolean {
     return reg.test(fileName);
 }
 
-function getExtension(url:string) : Extension | undefined
-{
-    const reg : RegExp = /(\.(png|jpe?g|mp4))$/i;
-    const match = url.match(reg);
-
-    if(!match)
-        return;
-
-    return match[0].toLowerCase() as Extension;
-}
