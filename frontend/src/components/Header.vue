@@ -28,7 +28,16 @@
 .header {
     padding: 1%;
     display: flex;
+    flex-direction: column;
     background-color: var(--bg);
+}
+
+ @media (min-width: 768px) {
+    .header
+    {
+        flex-direction: row;
+
+    }
 }
 
 .header-l-box {
@@ -47,7 +56,13 @@
 }
 
 .header-l-box img {
-    width: 100%;
+    width: 80%;
+}
+
+ @media (min-width: 768px) {
+    .header-l-box img {
+        width: 100%;
+    }
 }
 
 .header-m-box {
@@ -58,47 +73,33 @@
 
 .header-r-box {
     flex: 4;
+    
+    display: flex;
+    flex-direction: row;
+
     border-bottom: 1px solid var(--gray);
 }
-
-.menu {
-    display: flex;
-
-    padding: 1%;
-}
-
-.menu-btn {
-    flex: 1;
-
-    padding: 15px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-
-    text-align: center;
-
-    font-family: Roboto;
-    color: var(--white);
-
-    transition: .5s;
-}
-
-.menu-btn:hover {
-    background-color: black;
-    transform: scale(1.1, 1.1);
-    cursor: pointer;
-}
-
-.menu-btn a,
-.menu-btn a:active {
-    color: var(--white);
-    text-decoration: none;
-}
+ @media (min-width: 768px) {  
+    .header-r-box 
+    {
+        display: block;
+        border-bottom: 1px solid var(--gray);
+    }
+ }
 
 .socials {
-    margin-right: 0px;
+    margin-right: auto;
     margin-left: auto;
     max-width: 30%;
     padding: 5px;
+}
+ @media (min-width: 768px) {
+    .socials {
+        margin-right: 0px;
+        margin-left: auto;
+        max-width: 30%;
+        padding: 5px;
+    }
 }
 
 .socials a,
@@ -112,6 +113,14 @@ a:active {
 .icon {
     width: 22px;
     vertical-align: middle;
+    margin-right: 10px;
+}
+
+ @media (min-width: 768px) {
+ .icon {
+    width: 22px;
+    vertical-align: middle;
     margin-right: 20px;
 }
+ }
 </style>

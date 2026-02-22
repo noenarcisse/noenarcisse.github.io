@@ -8,20 +8,25 @@ import Band from './components/Project.vue'
 import About from './components/About.vue'
 
 import { ref, type App } from 'vue'
-import { type Project, type RawProjectCSV, isProject } from './types/Project'
+import { type Project, type ProjectData, isProject } from './types/Project'
 import { AppData } from './stores/AppData' 
 
 //          VARS
+
+//Rework ca proprement
 const GOOGLESHEET_URL_BODY = "https://docs.google.com/spreadsheets/d/e/"
 const data:AppData = AppData.getInstance(GOOGLESHEET_URL_BODY)
 
 data.links.files.push("2PACX-1vQx_XlO6VRfyXA4UOBFnTaWLwds1vpF7pMHFVG5RQpau7cRMUmVijl5jdx05j3VMdLV-66-aYOcMtRy/pub?gid=730308241&single=true&output=csv")
+data.links.files.push("2PACX-1vQx_XlO6VRfyXA4UOBFnTaWLwds1vpF7pMHFVG5RQpau7cRMUmVijl5jdx05j3VMdLV-66-aYOcMtRy/pub?gid=1796485526&single=true&output=csv")
+
+const fileToUse = data.isDevMode ? data.links.files[1] : data.links.files[0];
 
 /**
  * Get the values from the published CSV and parse them.
  * Doublecheck is values are leggit and clear some \n issue from the sheet
  */
-Papa.parse(data.links.body+data.links.files[0],
+Papa.parse(data.links.body+fileToUse,
     {
         header: true,						// use a header kept in the very first line 
         download: true,
@@ -29,7 +34,7 @@ Papa.parse(data.links.body+data.links.files[0],
         skipEmptyLines: true,				//remove the last empty line, does not remove any other one despite the actual name of the param
         complete: function (results) {
             //console.log(results.data)		// json de string a repasser
-            const rawData = results.data as RawProjectCSV[]
+            const rawData = results.data as ProjectData[]
 
             data.projects = rawData
                                 .filter(isProject)
@@ -58,31 +63,10 @@ Papa.parse(data.links.body+data.links.files[0],
         }
     });
 
-//     Papa.parse(link2.value,
-// 	{
-// 		header: true,						// use a header kept in the very first line
-// 		download: true,
-// 		encoding : 'UTF-8',					//csv file from g sheets are in utf
-// 		skipEmptyLines: true,				//remove the last empty line, does not remove any other one despite the actual name of the param
-// 		complete: function(results)
-// 		{
-// 			console.log(results.data)		// Array d'objets
-//                   infosData.value = results.data.map((row, index:number) => ({
-//                     id: row.id ? Number(row.id) : index + 1,  // si id existe dans CSV, sinon auto-incrément
-//                     title: row.title || 'missing title',                      // nom depuis CSV
-//                     descr: row.descr || 'missing elem description',
-//                     link: row.link || ''
-//                     }))
-//             console.log(infosData.value)
-//             //dataLoaded.value = true;
-
-// 		}
-// 	});
-
 </script>
 
 <template>
-    <Header />
+    <Header></Header>
     <div v-if="data.isDataLoaded" id="content">
         <div v-for="project of data.projects">
             <Band :project="project" :pair="project.id % 2 == 0" />

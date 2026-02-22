@@ -183,9 +183,18 @@ a:hover {
 
 .prods
 {
-    display:flex;
-    flex-direction: row;
-    gap:20px;
+    display:grid;
+    grid-template-columns: auto auto;
+    gap:10px;
+}
+@media (min-width: 768px) 
+ {
+    .prods
+    {
+        display:flex;
+        flex-direction: row;
+        gap:20px;
+    }
 }
 
 .list-prods img {
@@ -199,22 +208,33 @@ a:hover {
     border-bottom: 1px solid gray;
 }
 
+
+
 .tech {}
 
 .list
 {
-    max-width:60%;
+    max-width:100%;
 }
+
+@media (min-width: 768px) 
+{
+    .list
+    {
+        max-width:60%;
+    }
+}
+
 
 .list-elements
 {
     display : inline-block;
     margin: 5px;
-    padding:10px;
+    padding: 7px;
 
     background-color: rgb(32, 32, 32);
 
-    border:1px solid var(--yellow);
+    border:1px solid var(--white);
     border-radius: 5px;
 
     color: var(--white);
@@ -224,6 +244,17 @@ a:hover {
 
     transition: 0.4s;
 }
+
+@media (min-width: 768px) 
+{
+    .list-elements
+    {
+        margin: 5px;
+        padding: 10px;
+    }
+}
+
+
 .list-elements:hover
 {
     transform: scale(1.1, 1.1);

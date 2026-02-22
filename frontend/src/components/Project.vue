@@ -78,7 +78,7 @@ function autoPause() {
 .container-project {
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-bottom: 20px;
 
     color: var(--white);
@@ -88,6 +88,13 @@ function autoPause() {
     border-bottom: 1px solid var(--gray);
 
     background-color: rgb(29, 29, 29);
+}
+ @media (min-width: 768px) {
+    .container-project
+    {
+        flex-direction: row;
+
+    }
 }
 
 .pair {
@@ -122,10 +129,21 @@ function autoPause() {
 }
 .title
 {
+    padding-bottom:5%;
     align-items:flex-start;
     font-size: 30px;
     text-transform: uppercase;
     text-align: center;
+}
+ @media (min-width: 768px) 
+ {
+    .title
+    {
+        align-items:flex-start;
+        font-size: 30px;
+        text-transform: uppercase;
+        text-align: center;
+    }
 }
 .logo img
 {
@@ -143,21 +161,34 @@ function autoPause() {
 
 .descr {
     white-space: pre-line;
+    max-width: 100%;
 }
 
 .visual {
     padding-top:20px;
     flex: 3;
 }
+
 .visual video
 {
-    max-width: 600px;
+    max-width: 100%;
 }
 .visual img
 {
-    max-width: 600px;
+    max-width: 100%;
 }
 
+/* needed ? */
+ @media (min-width: 768px) {
+    .visual video
+    {
+        max-width: 600px;
+    }
+    .visual img
+    {
+        max-width: 600px;
+    }
+ }
 
 h1 {
     padding-bottom: 10px;
