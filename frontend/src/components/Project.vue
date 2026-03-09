@@ -3,7 +3,7 @@ import { ref } from 'vue';
 
 import { type Project } from '@/types/Project'
 import { AppData } from '@/stores/AppData';
-import { isVideo, isImage } from '@/models/Video';
+import { isVideo, isImage } from '@/models/Medias';
 
 const data = AppData.getInstance()
 
@@ -132,7 +132,7 @@ function autoPause() {
     padding-bottom:5%;
     align-items:flex-start;
     font-size: 30px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     text-align: center;
 }
  @media (min-width: 768px) 
@@ -141,7 +141,7 @@ function autoPause() {
     {
         align-items:flex-start;
         font-size: 30px;
-        text-transform: uppercase;
+        /* text-transform: uppercase; */
         text-align: center;
     }
 }
