@@ -1,0 +1,48 @@
+@if(project().isShown || (project().isShownDev && data.isDevMode))
+{
+
+<a [href]="'/project/'+project().url.toLowerCase()">
+<div class="container-project" [style.borderColor]="project().color">
+        <div class="project-logo" [style.backgroundImage]="'url(/images/'+project().backgroundImage+')'">
+            <div class="colored-glass" [style.backgroundColor]="project().color">
+                <div>
+                    <img [src]="'images/projects/'+project().logo" />
+                </div>
+                <div>
+                    {{ project().title }}
+                </div>
+            </div>
+        </div>
+    <div class="project-descr">
+        <div class="descr">
+            {{project().summary}}
+        </div>
+            <!-- <div class="visual">
+                @if(checkVideo(project().visual))
+                {
+                    <video controls loop ref="videoPlayer">
+                        <source [src]="videoUrl + project().visual" type="video/mp4">
+                        Your browser doesn't support videos.
+                    </video>
+                }
+
+                @if(checkImage(project().visual))
+                {
+                    <picture v-if="isImage(project().visual)">
+                        <img [src]="imgUrl + project().visual" alt="Description">
+                    </picture>
+                }
+
+            </div> -->
+            <div class="stack">
+                @for(tech of splitStack(project().stack); track $index)
+                {
+                    <div class="tech" [style.backgroundColor]="project().color">
+                        {{tech.trim()}}
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</a>
+}

@@ -1,0 +1,13 @@
+<div>
+      @defer(when data.isDataLoaded())
+      {
+          @for(elem of data.projects(); track elem.id)
+          {
+              <app-band [project]="elem"></app-band>
+          }
+      }
+      @placeholder (minimum 500ms)
+      {
+          <app-loader></app-loader>
+      }
+</div>

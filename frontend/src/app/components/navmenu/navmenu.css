@@ -1,0 +1,26 @@
+.nav-menu-container
+{
+    display: flex;
+    justify-content: center;
+
+    color:var(--white);
+}
+.nav-menu-item
+{
+    flex:1;
+
+    display: flex;
+    justify-content: center;
+}
+
+a
+{
+    color:var(--white);
+    text-decoration: none;
+
+    font-family: Roboto;
+}
+a:hover
+{
+    color:var(--yellow);
+}

@@ -1,0 +1,19 @@
+
+      @defer(when data.isDataLoaded())
+      {
+        <div class="cards">
+          @for(elem of data.projects(); track elem.id)
+          {
+            @if(elem.isShown)
+            {
+              <app-project-card class="card" [project]="elem"></app-project-card>
+            }
+          }
+          </div>
+      }
+      @placeholder (minimum 300ms)
+      {
+        <div style="display:flex; justify-content: center; align-items: center;">
+          <app-loader style="flex:1;"></app-loader>
+        </div>
+      }
