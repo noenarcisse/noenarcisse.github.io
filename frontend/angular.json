@@ -12,10 +12,18 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
-      "architect": {
-        "build": {
+      "architect": 
+      {
+        "build": 
+        {
           "builder": "@angular/build:application",
-          "options": {
+          "options": 
+          {
+            "outputPath": 
+            {
+              "base": "../docs",
+              "browser": ""
+            },
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
