@@ -4,6 +4,7 @@ import { loadProjectsData, Project } from '../../types/Project';
 import { AppData } from '../../stores/AppData';
 import { isImage, isVideo } from '../../models/Media';
 import { Loader } from '../loader/loader';
+import { splitStack } from '../../helpers/helpers';
 
 @Component({
   selector: 'app-project-page',
@@ -22,6 +23,8 @@ export class ProjectPage {
 
   checkImage = isImage;
   checkVideo = isVideo;
+
+  splitStack = splitStack;
 
   videoUrl = '/videos/';
   imgUrl = '/images/';

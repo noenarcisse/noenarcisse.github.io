@@ -145,3 +145,27 @@ a ,a:active {
 a:hover {
     color: var(--yellow);
 }
+
+.stack
+{
+    display: grid;
+    gap: 2%;
+    row-gap: 10%;
+    grid-template-columns: auto auto auto auto;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.tech
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 7px;
+    padding-left:10px;
+    padding-right:10px;
+
+    border: 1px solid white;
+    border-radius: 50px;
+}

@@ -2,6 +2,7 @@ import { Component, inject, input } from '@angular/core';
 import { AppData } from '../../stores/AppData';
 import { isImage, isVideo } from '../../models/Media';
 import { Project } from '../../types/Project';
+import { splitStack } from '../../helpers/helpers';
 
 @Component({
   selector: 'app-project-card',
@@ -18,13 +19,15 @@ export class ProjectCard {
   checkVideo = isVideo;
   checkImage = isImage;
 
+  splitStack = splitStack;
+
   //appdata?
   videoUrl = '/videos/';
   imgUrl = '/images/';
 
-  splitStack(stack : string) : string[]
-  {
-    return stack.split("/");
-  }
+  // splitStack(stack : string) : string[]
+  // {
+  //   return stack.split("/");
+  // }
 
 }

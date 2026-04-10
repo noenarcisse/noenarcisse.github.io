@@ -19,7 +19,14 @@
             </span>
             }
 
-            Stack : {{ project.stack }} <br>
+            <div class="stack">
+                @for(tech of splitStack(project.stack); track $index)
+                {
+                    <div class="tech" [style.backgroundColor]="project.color">
+                        {{tech.trim()}}
+                    </div>
+                }
+            </div>
 
             <div class="page-content" [innerHTML]="project.page"></div>
             <!-- {{ project.page }} -->
