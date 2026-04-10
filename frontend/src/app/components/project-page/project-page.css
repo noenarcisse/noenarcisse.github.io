@@ -7,7 +7,7 @@
     color: var(--white);
 
     font-family: Roboto, 'Segoe UI', 'San Francisco', sans-serif;
-    font-size:12px;
+    font-size:14px;
     border-bottom: 1px solid var(--gray);
 
     background-color: rgb(29, 29, 29);
@@ -96,7 +96,7 @@
 {
     max-width: 100%;
 }
-.visual img
+.visual img, .page-content ::ng-deep img
 {
     max-width: 100%;
 }
@@ -107,9 +107,9 @@
     {
         max-width: 600px;
     }
-    .visual img
+    .visual img, .page-content ::ng-deep img
     {
-        max-width: 600px;
+        max-width: 750px;
     }
  }
 

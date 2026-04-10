@@ -10,7 +10,7 @@ export interface Project
     summary:string;
     link:string;
     stack:string;
-    description: Description;
+    page: string;
     visual:string;
     isShown:boolean;
     isShownDev:boolean;
@@ -49,11 +49,7 @@ export function loadProjectsData(data : AppData)
               subtitle: row.subtitle || 'subtitle missing',
               link: row.link || '#',
               stack: row.stack || 'Stack is missing',
-              description: {
-                objective: row.objective?.replace(/\n{3,}/g, '\n\n') || 'Objective is missing',
-                challenge: row.challenge?.replace(/\n{3,}/g, '\n\n') || 'Challenge is missing',
-                solution: row.solution?.replace(/\n{3,}/g, '\n\n') || 'Solution is missing'
-              },
+              page: row.page?.replace(/\n{3,}/g, '\n\n') || 'Page content is missing',
               visual: row.visual || '',
               isShown: Boolean(Number(row.isShown)),
               isShownDev: Boolean(Number(row.isShownDev)),
@@ -70,14 +66,6 @@ export function loadProjectsData(data : AppData)
       });
 }
 
-
-export interface Description
-{
-    objective:string;
-    challenge:string;
-    solution:string;
-}
-
 export interface ProjectData {
     title?: string;
     subtitle?:string;
@@ -85,9 +73,7 @@ export interface ProjectData {
     url:string;
     link?: string;
     stack?: string;
-    objective?: string;
-    challenge?: string;
-    solution?: string;
+    page?: string;
     visual?:string;
     isShown:boolean;
     isShownDev:boolean;
@@ -108,9 +94,7 @@ export function isProject(row:any): row is ProjectData
         typeof row.title === 'string'       &&
         typeof row.link === 'string'        &&
         typeof row.stack === 'string'       &&
-        typeof row.objective === 'string'   &&
-        typeof row.challenge === 'string'   &&
-        typeof row.solution === 'string'    &&
+        typeof row.page === 'string'        &&
         typeof row.isShown === 'string' && (Number(row.isShown) === 0 || Number(row.isShown) === 1) &&
         typeof row.isShownDev === 'string' && (Number(row.isShownDev) === 0 || Number(row.isShownDev) === 1)
 

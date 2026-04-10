@@ -21,14 +21,11 @@
 
             Stack : {{ project.stack }} <br>
 
-            <h2>Objective</h2>
-            {{ project.description.objective }}
-            <h2>Challenge</h2>
-            {{ project.description.challenge }}
-            <h2>Solution</h2>
-            {{ project.description.solution }}
+            <div class="page-content" [innerHTML]="project.page"></div>
+            <!-- {{ project.page }} -->
+
         </div>
-        <div class="visual">
+        <!-- <div class="visual">
             @if(checkVideo(project.visual))
             {
             <video controls loop ref="videoPlayer">
@@ -44,7 +41,7 @@
             </picture>
             }
 
-        </div>
+        </div> -->
     </div>
 </div>
 
@@ -53,7 +50,7 @@
 Project introuvable.
 }
 }
-    @placeholder (minimum 300ms)
+    @placeholder (minimum 10ms)
     {
     <div style="display:flex; justify-content: center; align-items: center;">
         <app-loader style="flex:1;"></app-loader>
