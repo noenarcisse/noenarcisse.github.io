@@ -103,13 +103,11 @@
 
 /* needed ? */
  @media (min-width: 768px) {
-    .visual video
-    {
-        max-width: 600px;
-    }
-    .visual img, .page-content ::ng-deep img
+    .visual video, .page-content ::ng-deep video, .visual img, .page-content ::ng-deep img
     {
         max-width: 750px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
  }
 
@@ -153,8 +151,8 @@ a:hover {
     row-gap: 10%;
     grid-template-columns: auto auto auto auto;
 
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 70px;
 }
 .tech
 {
