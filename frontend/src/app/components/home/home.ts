@@ -9,7 +9,7 @@ import { ProjectCard } from "../project-card/project-card";
 
 @Component({
   selector: 'app-home',
-  imports: [Band, Loader, ProjectCard],
+  imports: [Loader, ProjectCard],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
