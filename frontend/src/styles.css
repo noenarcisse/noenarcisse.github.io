@@ -33,6 +33,10 @@ body {
     background: var(--bg-color);
 }
 
+a:visited, a:active, a:link {
+    color: var(--white)!important;
+}
+
 @keyframes colorShift {
     0% {
         background-color: rgba(186, 45, 32, var(--glass-alpha));
@@ -77,4 +81,14 @@ body {
 
 #app-menu {
     flex: 1;
+}
+
+code{
+    display: block;
+    border: 1px solid var(--white);
+    border-radius: 3px;
+    background-color: var(--black);
+    padding:10px;
+    padding-top:20px;
+    padding-bottom:20px;
 }
