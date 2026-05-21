@@ -32,11 +32,13 @@ export class About {
   ];
   techs: string[] = [
     "C#",
+    ".NET",
     "ASP.NET",
     "LINQ",
     "Entity",
     "Javascript",
     "Typescript",
+    "Angular",
     "Vue 3",
     "Node.js",
     "Github",
