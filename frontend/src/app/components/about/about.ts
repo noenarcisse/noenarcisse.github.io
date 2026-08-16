@@ -1,5 +1,7 @@
 import { Component, computed } from '@angular/core';
 
+type Icon = string | null //icon url
+
 @Component({
   selector: 'app-about',
   imports: [],
@@ -11,50 +13,83 @@ export class About {
   baseUrl: string = "/images/prods/"
 
   prods: Map<string, string> = new Map([
-    ["Blood Bar Tycoon",      this.baseUrl + "bbt_mini.jpg"],
-    ["Magic Forge Tycoon",    this.baseUrl + "mft_mini.jpg"],
-    ["Berzerker Homestead",   this.baseUrl + "bh_mini.jpg"],
-    ["Lights out!",           this.baseUrl + "lo_mini.jpg"],
-    ["Star Fish Strumpfer",   this.baseUrl + "sfs_mini.jpg"]
+    ["Blood Bar Tycoon", this.baseUrl + "bbt_mini.jpg"],
+    ["Magic Forge Tycoon", this.baseUrl + "mft_mini.jpg"],
+    ["Berzerker Homestead", this.baseUrl + "bh_mini.jpg"],
+    ["Lights out!", this.baseUrl + "lo_mini.jpg"],
+    ["Star Fish Strumpfer", this.baseUrl + "sfs_mini.jpg"]
   ]);
-    
+
 
   skills: string[] = [
+    "Fast Learning",
+    "Scripting & Programming",
+    "Testing",
+    "Automation",
+    "Organization",
     "Architecture",
     "Logic",
     "Efficiency",
-    "Fast Learning",
-    "Organization",
+
     "Communication",
     "Teamwork",
-    "French",
-    "English"
-  ];
+
+    "ISTQB Foundation",
+    "Agile",
+    "Scrum"
+  ]
+
+  languages: string[] = [
+    "French - Native",
+    "English - C1"
+  ]
+
+  baseLangUrl: string = "/images/lang_icons/"
+
+  prog_languages: Map<string, Icon> = new Map([
+    ["C#", this.baseLangUrl + "cs.png"],
+    ["Go", this.baseLangUrl + "go.png"],
+    ["Python", this.baseLangUrl + "py.png"],
+    ["SQL", this.baseLangUrl + "sql.png"],
+    ["Nim", this.baseLangUrl + "nim.png"],
+    ["F#", this.baseLangUrl + "fs.png"],
+    ["Typescript", this.baseLangUrl + "ts.png"],
+    // ["Javascript", this.baseLangUrl + ""],
+    ["HTML", this.baseLangUrl + "html.png"],
+    ["CSS", this.baseLangUrl + "css.png"],
+  ])
+
+  others: Map<string, Icon> = new Map([
+    ["Java", this.baseLangUrl + "java.png"],
+    ["PHP", this.baseLangUrl + "php.png"],
+    ["MySQL", this.baseLangUrl + "mysql.png"],
+    ["C", this.baseLangUrl + "c.png"],
+    ["Gleam", this.baseLangUrl + "gleam.png"],
+  ])
+
   techs: string[] = [
-    "C#",
     ".NET",
     "ASP.NET",
     "LINQ",
     "Entity",
-    "Javascript",
-    "Typescript",
+
+    "FlaUI",
+    "Playwright",
+
+    "PostGreSQL",
+    "SQLite",
+
+    "Blazor",
     "Angular",
     "Vue 3",
+
+    "Deno",
     "Node.js",
+
     "Github",
     "Plastic SCM",
-    "Unity3D"
-  ];
 
-  oldTechs: string[] = [
-    "Java",
-    "SQL",
-    "PHP",
-    "MySQL",
-    "HTML",
-    "CSS",
-    "Notions in Perl",
-    "Notions in C"
-  ];
+    "Unity3D"
+  ]
 
 }
