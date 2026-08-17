@@ -15,7 +15,6 @@ export class ProjectCard {
   data=inject(AppData);
   project = input.required<Project>();
 
-  //bricolo, ca devrait etre un service injecté et plus une petite utility d'un model?
   checkVideo = isVideo;
   checkImage = isImage;
 
@@ -24,10 +23,5 @@ export class ProjectCard {
   //appdata?
   videoUrl = '/videos/';
   imgUrl = '/images/';
-
-  // splitStack(stack : string) : string[]
-  // {
-  //   return stack.split("/");
-  // }
 
 }
