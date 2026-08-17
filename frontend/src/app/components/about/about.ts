@@ -81,6 +81,9 @@ export class About {
     ["Gleam", this.baseLangUrl + "gleam.png"],
   ])
 
+
+
+
   techs: string[] = [
     ".NET",
     "ASP.NET",
@@ -105,4 +108,25 @@ export class About {
 
     "Unity3D"
   ]
+
+
+  baseTechUrl: string = "/images/techs_icons/"
+  techs2: Map<string, Icon> = new Map([
+    [".NET", this.baseTechUrl + "dotnet.png"],
+    ["ASP.NET", this.baseTechUrl + "aspnet.png"],
+    ["LINQ", this.baseTechUrl + null],
+    ["Entity", this.baseTechUrl + null],
+    ["FlaUI", this.baseTechUrl + "flaui.png"],
+    ["Playwright", this.baseTechUrl + "playwright.png"],
+    ["PostGreSQL", this.baseTechUrl + "postgresql.png"],
+    ["SQLite", this.baseTechUrl + "sqlite.png"],
+    ["Blazor", this.baseTechUrl + "blazor.png"],
+    ["Angular", this.baseTechUrl + "angular.png"],
+    ["Vue 3", this.baseTechUrl + "vue.png"],
+    ["Deno", this.baseTechUrl + "deno.png"],
+    ["Node.js", this.baseTechUrl + "node.png"],
+    ["Git", this.baseTechUrl + "git.png"],
+    ["Plastic SCM", this.baseTechUrl + "plastic.png"],
+    ["Unity 3D", this.baseTechUrl + "unity.png"],
+  ])
 }
