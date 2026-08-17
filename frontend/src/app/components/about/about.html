@@ -59,32 +59,34 @@
                 }
             </div>
             <h2>Others (notions or previously used)</h2>
-            @for(oldtech of others; track $index)
-            {
-            <div class="list-elements list-elements2">
-                <div>
-                    <img [src]="oldtech[1]" [alt]="oldtech[0]">
-                </div>
-                <div class="lang-name">
-                    <span>{{oldtech[0]}}</span>
-                </div>
-            </div>
-            }
+            <div class="list">
 
+                @for(oldtech of others; track $index)
+                {
+                <div class="list-elements list-elements2">
+                    <div>
+                        <img [src]="oldtech[1]" [alt]="oldtech[0]">
+                    </div>
+                    <div class="lang-name">
+                        <span>{{oldtech[0]}}</span>
+                    </div>
+                </div>
+                }
+            </div>
         </div>
         <div class="tech">
             <h2>Techs</h2>
             <div class="list">
                 @for(tech of techs2; track $index)
                 {
-                    <div class="list-elements list-elements2">
-                <div>
-                    <img [src]="tech[1]" [alt]="tech[0]">
+                <div class="list-elements list-elements2">
+                    <div>
+                        <img [src]="tech[1]" [alt]="tech[0]">
+                    </div>
+                    <div class="lang-name">
+                        <span>{{tech[0]}}</span>
+                    </div>
                 </div>
-                <div class="lang-name">
-                    <span>{{tech[0]}}</span>
-                </div>
-            </div>
                 }
             </div>
         </div>
