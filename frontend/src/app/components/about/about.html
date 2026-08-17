@@ -1,23 +1,28 @@
 <div class="about-section">
-    <div class="container descr">
+    <div class="container section-descr">
         <div class="about">
-            <div class="profile-picture"><img src="/images/profile_pics/avat-daphne.jpg" /></div>
-            <div class="name">Noe Narcisse</div>
-            <div class="email"><img src="/email_icon.png" class="small-icons" /><a
-                    href="mailto:noenarcisse.job@gmail.com">noenarcisse.job@gmail.com</a></div>
-            <div class="location"><img src="/location_icon.png" class="small-icons" />Brussels, Belgium</div>
-            <p>
-                Quality Assurance Tester based in Brussels. <br>
-                Currently enrolled in a QA Tester program at Digital.brussels with a ISTQB Foundation certification.
-                <br>
-                Previously worked as a character artist in games at Clever Trickster Studio and as a solo dev.<br>
-            </p>
+            <div class="profile">
+                <div class="profile-picture"><img src="/images/profile_pics/avat-daphne.jpg" /></div>
+                <div class="name">Noe Narcisse</div>
+                <div class="email"><img src="/email_icon.png" class="small-icons" /><a
+                        href="mailto:noenarcisse.job@gmail.com">noenarcisse.job@gmail.com</a></div>
+                <div class="location"><img src="/location_icon.png" class="small-icons" />Brussels, Belgium</div>
+            </div>
+            <div class="descr">
+                <span>
+                    Quality Assurance Tester / Automation based in Brussels. <br>
+                    Currently enrolled in a QA Tester program at Digital.brussels with a ISTQB Foundation certification.
+                    <br>
+                    Previously worked as a character artist in games at Clever Trickster Studio and as a solo dev.<br>
+                </span>
+            </div>
+
         </div>
 
     </div>
     <div class="container">
         <div class="prod">
-            <h1>Released games</h1>
+            <h2>Released games</h2>
             <div class="prods">
                 @for(prod of prods; track $index)
                 {
@@ -32,7 +37,7 @@
             </div>
         </div>
         <div class="skills">
-            <h1>Skills</h1>
+            <h2>Skills</h2>
             <div class="list">
                 @for(skill of skills; track $index)
                 {
@@ -40,8 +45,17 @@
                 }
             </div>
         </div>
+        <div class="skills">
+            <h2>Languages</h2>
+            <div class="list">
+                @for(lang of languages; track $index)
+                {
+                <span class="list-elements">{{ lang }}</span>
+                }
+            </div>
+        </div>
         <div class="prog_languages">
-            <h1>Languages</h1>
+            <h2>Programming languages</h2>
             <div class="list">
                 @for(tech of prog_languages; track $index)
                 {
@@ -55,22 +69,22 @@
                 </div>
                 }
             </div>
-                <h1>Others (notions or previously used)</h1>
-                @for(oldtech of others; track $index)
-                {
-                <div class="list-elements list-elements2">
-                    <div>
-                        <img [src]="oldtech[1]" [alt]="oldtech[0]">
-                    </div>
-                    <div class="lang_name">
-                        <span>{{oldtech[0]}}</span>
-                    </div>
+            <h2>Others (notions or previously used)</h2>
+            @for(oldtech of others; track $index)
+            {
+            <div class="list-elements list-elements2">
+                <div>
+                    <img [src]="oldtech[1]" [alt]="oldtech[0]">
                 </div>
-                }
-      
+                <div class="lang_name">
+                    <span>{{oldtech[0]}}</span>
+                </div>
+            </div>
+            }
+
         </div>
         <div class="tech">
-            <h1>Techs</h1>
+            <h2>Techs</h2>
             <div class="list">
                 @for(tech of techs; track $index)
                 {
@@ -78,5 +92,6 @@
                 }
             </div>
         </div>
+
     </div>
 </div>

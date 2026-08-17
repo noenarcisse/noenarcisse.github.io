@@ -1,4 +1,4 @@
-h1 {
+h2 {
     padding-bottom: 10px;
 
     max-width: 50%;
@@ -41,11 +41,16 @@ a:hover {
 
 }
 
-.about-section .descr {
+.about-section .section-descr {
     background-color: rgb(37, 37, 37);
 }
 
-.about div {
+.about{
+    display: flex; 
+    gap: 2%; 
+}
+
+.about > div {
     padding-top: 5px;
     padding-bottom: 5px;
 }
@@ -64,12 +69,25 @@ a:hover {
     vertical-align: middle;
 }
 
+.profile {
+    display: flex;
+    flex-direction: column;
+    gap: .7em;
+}
+
 .profile-picture img {
     width: 150px;
+    border: .7em double var(--gray);
     border-radius: 100px;
 }
 
-
+.descr {
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    font-size: larger;
+    /* border: 1px solid red; */
+}
 /* ------------------------ */
 
 .prod {
