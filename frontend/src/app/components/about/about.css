@@ -177,7 +177,7 @@ a:hover {
 
 @media (min-width: 768px) {
     .list {
-        max-width: 60%;
+        /* max-width: 60%; */
     }
 }
 
