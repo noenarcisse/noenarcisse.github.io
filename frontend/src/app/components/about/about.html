@@ -79,9 +79,10 @@
             <div class="list">
                 @for(tech of techs2; track $index)
                 {
+                @let icon = tech[1] ?? "images/projects/cli_icon.png";
                 <div class="list-elements list-elements2">
                     <div>
-                        <img [src]="tech[1]" [alt]="tech[0]">
+                        <img [src]="icon" [alt]="tech[0]">
                     </div>
                     <div class="lang-name">
                         <span>{{tech[0]}}</span>

@@ -75,40 +75,11 @@ export class About {
 
   others: Map<string, Icon> = new Map([
     ["Java", this.baseLangUrl + "java.png"],
+    ["Gleam", this.baseLangUrl + "gleam.png"],
     ["PHP", this.baseLangUrl + "php.png"],
     ["MySQL", this.baseLangUrl + "mysql.png"],
     ["C", this.baseLangUrl + "c.png"],
-    ["Gleam", this.baseLangUrl + "gleam.png"],
   ])
-
-
-
-
-  techs: string[] = [
-    ".NET",
-    "ASP.NET",
-    "LINQ",
-    "Entity",
-
-    "FlaUI",
-    "Playwright",
-
-    "PostGreSQL",
-    "SQLite",
-
-    "Blazor",
-    "Angular",
-    "Vue 3",
-
-    "Deno",
-    "Node.js",
-
-    "Github",
-    "Plastic SCM",
-
-    "Unity3D"
-  ]
-
 
   baseTechUrl: string = "/images/techs_icons/"
   techs2: Map<string, Icon> = new Map([
@@ -127,6 +98,6 @@ export class About {
     ["Node.js", this.baseTechUrl + "node.png"],
     ["Git", this.baseTechUrl + "git.png"],
     ["Plastic SCM", this.baseTechUrl + "plastic.png"],
-    ["Unity 3D", null],
+    ["Unity 3D", this.baseTechUrl +"unity.png"],
   ])
 }
