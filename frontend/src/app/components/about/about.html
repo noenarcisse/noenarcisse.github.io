@@ -10,13 +10,7 @@
             </div>
             <div class="descr">
                 <span>
-
-                    Quality Assurance Tester / Automation based in Brussels. <br>
-                    Add stuff here <br>
-                    <br>
-                    Currently enrolled in a QA Tester program at Digital.brussels with a ISTQB Foundation certification.
-                    <br>
-                    Previously worked as a character artist in games at Clever Trickster Studio and as a solo dev on personal games project with Unity.<br>
+                    {{shortDescr}}
                 </span>
             </div>
 
@@ -34,9 +28,9 @@
                 }
             </div>
             <div class="list">
-                @for(skill of softs; track $index)
+                @for(softskill of softs; track $index)
                 {
-                <span class="list-elements">{{ skill }}</span>
+                <span class="list-elements">{{ softskill }}</span>
                 }
             </div>
         </div>
@@ -52,14 +46,14 @@
         <div class="prog_languages">
             <h2>Programming languages</h2>
             <div class="list">
-                @for(tech of prog_languages; track $index)
+                @for(prog of prog_languages; track $index)
                 {
                 <div class="list-elements list-elements2">
                     <div>
-                        <img [src]="tech[1]" [alt]="tech[0]">
+                        <img [src]="prog[1]" [alt]="prog[0]">
                     </div>
                     <div class="lang_name">
-                        <span>{{tech[0]}}</span>
+                        <span>{{prog[0]}}</span>
                     </div>
                 </div>
                 }

@@ -10,6 +10,13 @@ type Icon = string | null //icon url
 })
 export class About {
 
+  shortDescr: string = `
+  Quality Assurance Tester / Automation based in Brussels with a passion to learn how things work and automating tasks.
+
+  Currently enrolled in a QA Tester program at Digital.brussels with a ISTQB Foundation certification.
+  Previously worked as a character artist in games at Clever Trickster Studio and as a solo dev on personal games project with Unity.
+`
+
   baseUrl: string = "/images/prods/"
 
   prods: Map<string, string> = new Map([
@@ -22,31 +29,32 @@ export class About {
 
 
   skills: string[] = [
-    "Fast Learning",
+
     "Scripting & Programming",
     "Testing",
     "Automation",
 
     "Architecture",
+    "API",
     "Databases",
-    "Logic",
     "CI / CD",
-
+    "Jira",
 
     "ISTQB Foundation",
+  ]
+
+  softs: string[] = [
+    "Fast Learning",
+    "Organization",
+    "Communication",
+    "Teamwork",
+    "Efficiency",
     "Agile",
     "Scrum"
   ]
 
-  softs: string[] = [
-    "Organization",
-    "Communication",
-    "Teamwork",
-        "Efficiency",
-  ]
-
   languages: string[] = [
-    "French - Native",
+    "French - C2",
     "English - C1"
   ]
 
@@ -97,5 +105,4 @@ export class About {
 
     "Unity3D"
   ]
-
 }
