@@ -114,8 +114,8 @@ export class About {
   techs2: Map<string, Icon> = new Map([
     [".NET", this.baseTechUrl + "dotnet.png"],
     ["ASP.NET", this.baseTechUrl + "aspnet.png"],
-    ["LINQ", this.baseTechUrl + null],
-    ["Entity", this.baseTechUrl + null],
+    ["LINQ", null],
+    ["Entity", null],
     ["FlaUI", this.baseTechUrl + "flaui.png"],
     ["Playwright", this.baseTechUrl + "playwright.png"],
     ["PostGreSQL", this.baseTechUrl + "postgresql.png"],
@@ -127,6 +127,6 @@ export class About {
     ["Node.js", this.baseTechUrl + "node.png"],
     ["Git", this.baseTechUrl + "git.png"],
     ["Plastic SCM", this.baseTechUrl + "plastic.png"],
-    ["Unity 3D", this.baseTechUrl + "unity.png"],
+    ["Unity 3D", null],
   ])
 }
