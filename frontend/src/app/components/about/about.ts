@@ -26,17 +26,23 @@ export class About {
     "Scripting & Programming",
     "Testing",
     "Automation",
-    "Organization",
-    "Architecture",
-    "Logic",
-    "Efficiency",
 
-    "Communication",
-    "Teamwork",
+    "Architecture",
+    "Databases",
+    "Logic",
+    "CI / CD",
+
 
     "ISTQB Foundation",
     "Agile",
     "Scrum"
+  ]
+
+  softs: string[] = [
+    "Organization",
+    "Communication",
+    "Teamwork",
+        "Efficiency",
   ]
 
   languages: string[] = [

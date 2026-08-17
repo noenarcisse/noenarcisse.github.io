@@ -10,10 +10,13 @@
             </div>
             <div class="descr">
                 <span>
+
                     Quality Assurance Tester / Automation based in Brussels. <br>
+                    Add stuff here <br>
+                    <br>
                     Currently enrolled in a QA Tester program at Digital.brussels with a ISTQB Foundation certification.
                     <br>
-                    Previously worked as a character artist in games at Clever Trickster Studio and as a solo dev.<br>
+                    Previously worked as a character artist in games at Clever Trickster Studio and as a solo dev on personal games project with Unity.<br>
                 </span>
             </div>
 
@@ -21,25 +24,17 @@
 
     </div>
     <div class="container">
-        <div class="prod">
-            <h2>Released games</h2>
-            <div class="prods">
-                @for(prod of prods; track $index)
-                {
-                @let key = prod[0];
-                @let value = prod[1];
 
-                <div class="list-prods">
-                    <img [src]="value" /><br>
-                    {{key}}
-                </div>
-                }
-            </div>
-        </div>
         <div class="skills">
             <h2>Skills</h2>
             <div class="list">
                 @for(skill of skills; track $index)
+                {
+                <span class="list-elements">{{ skill }}</span>
+                }
+            </div>
+            <div class="list">
+                @for(skill of softs; track $index)
                 {
                 <span class="list-elements">{{ skill }}</span>
                 }
@@ -89,6 +84,22 @@
                 @for(tech of techs; track $index)
                 {
                 <span class="list-elements">{{ tech }}</span>
+                }
+            </div>
+        </div>
+
+        <div class="prod">
+            <h2>Released games</h2>
+            <div class="prods">
+                @for(prod of prods; track $index)
+                {
+                @let key = prod[0];
+                @let value = prod[1];
+
+                <div class="list-prods">
+                    <img [src]="value" /><br>
+                    {{key}}
+                </div>
                 }
             </div>
         </div>
