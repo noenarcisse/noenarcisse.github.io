@@ -43,7 +43,7 @@
                 }
             </div>
         </div>
-        <div class="prog_languages">
+        <div class="prog-languages">
             <h2>Programming languages</h2>
             <div class="list">
                 @for(prog of prog_languages; track $index)
@@ -52,7 +52,7 @@
                     <div>
                         <img [src]="prog[1]" [alt]="prog[0]">
                     </div>
-                    <div class="lang_name">
+                    <div class="lang-name">
                         <span>{{prog[0]}}</span>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                 <div>
                     <img [src]="oldtech[1]" [alt]="oldtech[0]">
                 </div>
-                <div class="lang_name">
+                <div class="lang-name">
                     <span>{{oldtech[0]}}</span>
                 </div>
             </div>
@@ -91,8 +91,14 @@
                 @let value = prod[1];
 
                 <div class="list-prods">
-                    <img [src]="value" /><br>
-                    {{key}}
+
+                    <div>
+                        <img [src]="value" />
+                    </div>
+                    <div class="lang-name">
+                        {{key}}
+                    </div>
+
                 </div>
                 }
             </div>
