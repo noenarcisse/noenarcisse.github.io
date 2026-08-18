@@ -66,7 +66,6 @@ export class About {
     ["Python", this.baseLangUrl + "py.png"],
     ["SQL", this.baseLangUrl + "sql.png"],
     ["Nim", this.baseLangUrl + "nim.png"],
-    ["F#", this.baseLangUrl + "fs.png"],
     ["Typescript", this.baseLangUrl + "ts.png"],
     // ["Javascript", this.baseLangUrl + ""],
     ["HTML", this.baseLangUrl + "html.png"],
@@ -74,8 +73,9 @@ export class About {
   ])
 
   others: Map<string, Icon> = new Map([
-    ["Java", this.baseLangUrl + "java.png"],
+    ["F#", this.baseLangUrl + "fs.png"],
     ["Gleam", this.baseLangUrl + "gleam.png"],
+    ["Java", this.baseLangUrl + "java.png"],
     ["PHP", this.baseLangUrl + "php.png"],
     ["MySQL", this.baseLangUrl + "mysql.png"],
     ["C", this.baseLangUrl + "c.png"],
@@ -85,7 +85,6 @@ export class About {
   techs2: Map<string, Icon> = new Map([
     [".NET", this.baseTechUrl + "dotnet.png"],
     ["ASP.NET", this.baseTechUrl + "aspnet.png"],
-    ["LINQ", null],
     ["Entity", null],
     ["FlaUI", this.baseTechUrl + "flaui.png"],
     ["Playwright", this.baseTechUrl + "playwright.png"],
@@ -98,6 +97,6 @@ export class About {
     ["Node.js", this.baseTechUrl + "node.png"],
     ["Git", this.baseTechUrl + "git.png"],
     ["Plastic SCM", this.baseTechUrl + "plastic.png"],
-    ["Unity 3D", this.baseTechUrl +"unity.png"],
+    ["Unity 3D", this.baseTechUrl + "unity.png"],
   ])
 }
