@@ -59,7 +59,6 @@ export function loadProjectsData(data : AppData)
             }))
           );
 
-        console.log(data.projects());
         data.isDataLoaded.set(true);
 
         }

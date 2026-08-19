@@ -143,10 +143,10 @@ a:hover {
 
 .stack
 {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: 2%;
-    row-gap: 10%;
-    grid-template-columns: auto auto auto auto;
+    row-gap: 1em;
 
     padding-top: 10px;
     padding-bottom: 10px;

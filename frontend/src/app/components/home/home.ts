@@ -1,9 +1,7 @@
 import { Component, inject } from '@angular/core';
 
-
 import { AppData } from '../../stores/AppData';
-import { isProject, Project, ProjectData, loadProjectsData } from '../../types/Project';
-import { Band } from '../band/band';
+import { loadProjectsData } from '../../types/Project';
 import { Loader } from '../loader/loader';
 import { ProjectCard } from "../project-card/project-card";
 
@@ -16,10 +14,7 @@ import { ProjectCard } from "../project-card/project-card";
 export class Home {
 data = inject(AppData);
 
-
   ngOnInit() {
-
     loadProjectsData(this.data);
-    
   }
 }
