@@ -83,16 +83,20 @@ export class About {
 
   baseTechUrl: string = "/images/techs_icons/"
   techs2: Map<string, Icon> = new Map([
+    ["Jira", this.baseTechUrl + "jira.png"],
+    ["Squash", this.baseTechUrl + "squash.png"],
     [".NET", this.baseTechUrl + "dotnet.png"],
     ["ASP.NET", this.baseTechUrl + "aspnet.png"],
     ["Entity", null],
     ["FlaUI", this.baseTechUrl + "flaui.png"],
     ["Playwright", this.baseTechUrl + "playwright.png"],
+    ["Selenium", null],
     ["PostGreSQL", this.baseTechUrl + "postgresql.png"],
     ["SQLite", this.baseTechUrl + "sqlite.png"],
     ["Blazor", this.baseTechUrl + "blazor.png"],
     ["Angular", this.baseTechUrl + "angular.png"],
     ["Vue 3", this.baseTechUrl + "vue.png"],
+    ["Testing Library", this.baseTechUrl + "testinglibrary.png"],
     ["Deno", this.baseTechUrl + "deno.png"],
     ["Node.js", this.baseTechUrl + "node.png"],
     ["Git", this.baseTechUrl + "git.png"],
