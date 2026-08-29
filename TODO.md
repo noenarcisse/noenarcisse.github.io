@@ -1,5 +1,10 @@
 update visuals for
-    babel
-    babeltut
-    
+babel
+babeltut
+
 update json struct for babel(tut)
+
+
+
+add a title under the name ?
+
