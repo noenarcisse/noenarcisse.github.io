@@ -36,6 +36,8 @@ export function loadProjectsData(data : AppData)
           //console.log(results.data)		// json de string a repasser
           const rawData = results.data as ProjectData[]
 
+          //todo horrible a lire, faut passer la mauvais data dans une fn de clean,
+          //recupérer la version propre puis l'enregistrer, ca fera 3 lignes lisibles au lieu de "ca"
           data.projects
           .set(
             rawData
@@ -53,12 +55,11 @@ export function loadProjectsData(data : AppData)
               visual: row.visual || '',
               isShown: Boolean(Number(row.isShown)),
               isShownDev: Boolean(Number(row.isShownDev)),
-              logo: row.logo || '/unitylogowhite.png',
+              logo: row.logo || '/unitylogowhite.png', //todo replace this why is unity logo by default and not CLI ?!
               color: row.color || 'black',
               backgroundImage: row.imgbg || 'copypasta_screen.jpg' //change proper default img here
             }))
           );
-
         data.isDataLoaded.set(true);
 
         }

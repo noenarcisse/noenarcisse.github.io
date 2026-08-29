@@ -3,7 +3,6 @@ import { RouterOutlet } from '@angular/router';
 
 
 import { Header } from "./components/header/header";
-import { About } from "./components/about/about";
 
 @Component({
   selector: 'app-root',
@@ -13,5 +12,6 @@ import { About } from "./components/about/about";
 })
 export class App {
   protected readonly title = signal('frontend');
+  
 
 }

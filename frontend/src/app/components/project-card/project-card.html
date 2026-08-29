@@ -1,6 +1,3 @@
-@if(project().isShown || (project().isShownDev && data.isDevMode))
-{
-
 <a [href]="'/project/'+project().url.toLowerCase()">
     <div class="container-project" [style.borderColor]="project().color">
         <div class="project-logo" [style.backgroundImage]="'url(/images/'+project().backgroundImage+')'">
@@ -28,4 +25,3 @@
         </div>
     </div>
 </a>
-}
