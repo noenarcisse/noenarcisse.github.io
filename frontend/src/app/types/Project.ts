@@ -8,10 +8,8 @@ export interface Project
     subtitle:string;
     url: string;
     summary:string;
-    link:string;
     stack:string;
     page: string;
-    visual:string;
     isShown:boolean;
     isShownDev:boolean;
     logo:string;
@@ -23,7 +21,7 @@ export function loadProjectsData(data : AppData)
 {
     const fileSheet : number = data.isDevMode ? 1 : 0;
 
-    console.log(data.getFileURL(fileSheet));
+    // console.log(data.getFileURL(fileSheet));
 
     Papa.parse(data.getFileURL(fileSheet),
       {
@@ -49,10 +47,8 @@ export function loadProjectsData(data : AppData)
               summary: row.summary || 'Summary is missing',
               url:row.url || '',
               subtitle: row.subtitle || 'subtitle missing',
-              link: row.link || '#',
               stack: row.stack || 'Stack is missing',
               page: row.page?.replace(/\n{3,}/g, '\n\n') || 'Page content is missing',
-              visual: row.visual || '',
               isShown: Boolean(Number(row.isShown)),
               isShownDev: Boolean(Number(row.isShownDev)),
               logo: row.logo || '/unitylogowhite.png', //todo replace this why is unity logo by default and not CLI ?!
@@ -74,7 +70,6 @@ export interface ProjectData {
     link?: string;
     stack?: string;
     page?: string;
-    visual?:string;
     isShown:boolean;
     isShownDev:boolean;
     logo?:string;
@@ -92,7 +87,6 @@ export function isProject(row:any): row is ProjectData
         row !== null &&
         typeof row === 'object'             &&
         typeof row.title === 'string'       &&
-        typeof row.link === 'string'        &&
         typeof row.stack === 'string'       &&
         typeof row.page === 'string'        &&
         typeof row.isShown === 'string' && (Number(row.isShown) === 0 || Number(row.isShown) === 1) &&
