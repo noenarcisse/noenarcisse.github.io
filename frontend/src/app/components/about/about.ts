@@ -13,7 +13,7 @@ export class About {
   shortDescr: string = `
   Quality Assurance Tester / Automation based in Brussels with a passion to learn how things work and automating tasks.
 
-  Currently enrolled in a QA Tester program at Digital.brussels with a ISTQB Foundation certification.
+  Currently enrolled in a QA Tester program at Digital.brussels with a ISTQB Foundation certification at the end.
   Previously worked as a character artist in games at Clever Trickster Studio and as a solo dev on personal games project with Unity.
 `
 
@@ -40,7 +40,7 @@ export class About {
     "CI / CD",
     "Jira",
 
-    "ISTQB Foundation",
+    // "ISTQB Foundation",
   ]
 
   softs: string[] = [
@@ -83,23 +83,29 @@ export class About {
 
   baseTechUrl: string = "/images/techs_icons/"
   techs2: Map<string, Icon> = new Map([
-    ["Jira", this.baseTechUrl + "jira.png"],
-    ["Squash", this.baseTechUrl + "squash.png"],
+    ["JIRA", this.baseTechUrl + "jira.png"],
+    ["SquashTM", this.baseTechUrl + "squash.png"],
+    ["SonarQube Community", this.baseTechUrl + "sonarqube.png"],
     [".NET", this.baseTechUrl + "dotnet.png"],
     ["ASP.NET", this.baseTechUrl + "aspnet.png"],
-    ["Entity", null],
+    // ["Entity", null],
     ["FlaUI", this.baseTechUrl + "flaui.png"],
     ["Playwright", this.baseTechUrl + "playwright.png"],
-    ["Selenium", null],
+    ["Selenium", this.baseTechUrl + "selenium.png"],
     ["PostGreSQL", this.baseTechUrl + "postgresql.png"],
     ["SQLite", this.baseTechUrl + "sqlite.png"],
     ["Blazor", this.baseTechUrl + "blazor.png"],
     ["Angular", this.baseTechUrl + "angular.png"],
     ["Vue 3", this.baseTechUrl + "vue.png"],
     ["Testing Library", this.baseTechUrl + "testinglibrary.png"],
+    ["Jasmine", this.baseTechUrl + "jasmine.png"],
+    ["xUnit", this.baseTechUrl + "xunit.png"],
+    ["Shouldly", this.baseTechUrl + "shouldly.png"],
+    ["NSubsitute", this.baseTechUrl + "nsubstitute.png"],
     ["Deno", this.baseTechUrl + "deno.png"],
     ["Node.js", this.baseTechUrl + "node.png"],
     ["Git", this.baseTechUrl + "git.png"],
+    ["Docker", this.baseTechUrl + "docker.png"],
     ["Plastic SCM", this.baseTechUrl + "plastic.png"],
     ["Unity 3D", this.baseTechUrl + "unity.png"],
   ])
