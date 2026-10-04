@@ -7,5 +7,3 @@ ecrire les testings projects correctement
 update visuals for :
     babel
     babeltut
-
-descr for smaller projects

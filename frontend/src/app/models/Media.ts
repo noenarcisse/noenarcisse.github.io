@@ -1,15 +1,8 @@
-
-//WIP
-//regrouper les extensions dans une seule source de verité
-
 import { inject } from "@angular/core";
 
 type MediaBase = 
 {
     url:string;
-    //for later
-    width?:number;
-    height?:number;
 };
 
 type Image = MediaBase &
@@ -32,7 +25,6 @@ export class Media
 {
 
     media : MediaTypes;
-    //TODO
     static readonly allowedExtensions : {} = {
         img : 
         [
@@ -46,7 +38,6 @@ export class Media
         ]
     };
 
-    //TODO
     private static readonly _allowedExtentionsRegex : RegExp = /(\.(png|jpe?g|mp4))$/i;
     
     constructor(url:string, alt?:string)
@@ -91,9 +82,6 @@ export class Media
     }
 
 }
-
-//TODO passer ca en static dans la classe, recup les regex de la source de verité de la class
-//Guards & utilities
 
 export function isVideo(fileName: string): boolean {
     const reg: RegExp = /\.mp4$/gi

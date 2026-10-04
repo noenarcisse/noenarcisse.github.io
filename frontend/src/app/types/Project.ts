@@ -46,12 +46,12 @@ export function loadProjectsData(data : AppData)
               title: row.title || 'Title missing',
               summary: row.summary || 'Summary is missing',
               url:row.url || '',
-              subtitle: row.subtitle || 'subtitle missing',
+              subtitle: row.subtitle || 'Subtitle missing',
               stack: row.stack || 'Stack is missing',
               page: row.page?.replace(/\n{3,}/g, '\n\n') || 'Page content is missing',
               isShown: Boolean(Number(row.isShown)),
               isShownDev: Boolean(Number(row.isShownDev)),
-              logo: row.logo || '/unitylogowhite.png', //todo replace this why is unity logo by default and not CLI ?!
+              logo: row.logo || 'cli_icon.png',
               color: row.color || 'black',
               backgroundImage: row.imgbg || 'copypasta_screen.jpg' //change proper default img here
             }))
