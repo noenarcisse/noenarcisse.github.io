@@ -31,7 +31,7 @@ export class About {
   skills: string[] = [
 
     "Scripting & Programming",
-    "Testing",
+    "Test design & strategy",
     "Automation",
 
     "Architecture",
@@ -59,6 +59,7 @@ export class About {
   ]
 
   baseLangUrl: string = "/images/lang_icons/"
+  baseTechUrl: string = "/images/techs_icons/"
 
   prog_languages: Map<string, Icon> = new Map([
     ["C#", this.baseLangUrl + "cs.png"],
@@ -73,6 +74,9 @@ export class About {
   ])
 
   others: Map<string, Icon> = new Map([
+    ["Vue 3", this.baseTechUrl + "vue.png"],
+    ["Duck DB", this.baseTechUrl + "duckdb.png"],
+
     ["F#", this.baseLangUrl + "fs.png"],
     ["Gleam", this.baseLangUrl + "gleam.png"],
     ["Java", this.baseLangUrl + "java.png"],
@@ -81,22 +85,26 @@ export class About {
     ["C", this.baseLangUrl + "c.png"],
   ])
 
-  baseTechUrl: string = "/images/techs_icons/"
+
   techs2: Map<string, Icon> = new Map([
-    ["JIRA", this.baseTechUrl + "jira.png"],
+    ["Jira", this.baseTechUrl + "jira.png"],
     ["SquashTM", this.baseTechUrl + "squash.png"],
+
     ["SonarQube Community", this.baseTechUrl + "sonarqube.png"],
+
     [".NET", this.baseTechUrl + "dotnet.png"],
-    ["ASP.NET", this.baseTechUrl + "aspnet.png"],
+    ["Bruno", null],
+    ["DevTools", null],
+
+    // ["ASP.NET", this.baseTechUrl + "aspnet.png"],
     // ["Entity", null],
     ["FlaUI", this.baseTechUrl + "flaui.png"],
     ["Playwright", this.baseTechUrl + "playwright.png"],
-    ["Selenium", this.baseTechUrl + "selenium.png"],
+    // ["Selenium", null],
     ["PostGreSQL", this.baseTechUrl + "postgresql.png"],
     ["SQLite", this.baseTechUrl + "sqlite.png"],
     ["Blazor", this.baseTechUrl + "blazor.png"],
     ["Angular", this.baseTechUrl + "angular.png"],
-    ["Vue 3", this.baseTechUrl + "vue.png"],
     ["Testing Library", this.baseTechUrl + "testinglibrary.png"],
     ["Jasmine", this.baseTechUrl + "jasmine.png"],
     ["xUnit", this.baseTechUrl + "xunit.png"],
