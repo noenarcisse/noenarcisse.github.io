@@ -18,6 +18,8 @@ export class About {
 `
 
   baseUrl: string = "/images/prods/"
+  baseLangUrl: string = "/images/lang_icons/"
+  baseTechUrl: string = "/images/techs_icons/"
 
   prods: Map<string, string> = new Map([
     ["Blood Bar Tycoon", this.baseUrl + "bbt_mini.jpg"],
@@ -37,20 +39,25 @@ export class About {
     "Architecture",
     "API",
     "Databases",
-    "CI / CD",
+
     "Jira",
+    "Agile",
+    "Scrum",
+
+    "CI / CD",
+
 
     // "ISTQB Foundation",
   ]
 
   softs: string[] = [
-    "Fast Learning",
-    "Organization",
-    "Communication",
-    "Teamwork",
-    "Efficiency",
-    "Agile",
-    "Scrum"
+    "Curiosity",
+    "Methodical approach",
+    "Structured reports & documentation",
+    "Fast adaptation to new languages & tools",
+    "Attention to detail",
+    "Autonomy (minimal supervision,clarifying ambiguities early)",
+    "Communication and collaboration skills",
   ]
 
   languages: string[] = [
@@ -58,8 +65,42 @@ export class About {
     "English - C1"
   ]
 
-  baseLangUrl: string = "/images/lang_icons/"
-  baseTechUrl: string = "/images/techs_icons/"
+
+  
+  techs2: Map<string, Icon> = new Map([
+    ["Jira", this.baseTechUrl + "jira.png"],
+    ["SquashTM", this.baseTechUrl + "squash.png"],
+    ["SonarQube Community", this.baseTechUrl + "sonarqube.png"],
+
+    [".NET", this.baseTechUrl + "dotnet.png"],
+    // ["ASP.NET", this.baseTechUrl + "aspnet.png"],
+    // ["Entity", null],
+    ["FlaUI", this.baseTechUrl + "flaui.png"],
+    ["Playwright", this.baseTechUrl + "playwright.png"],
+    // ["Selenium", null],
+    ["PostGreSQL", this.baseTechUrl + "postgresql.png"],
+    ["SQLite", this.baseTechUrl + "sqlite.png"],
+    ["Blazor", this.baseTechUrl + "blazor.png"],
+    ["Angular", this.baseTechUrl + "angular.png"],
+
+    ["pytest", this.baseTechUrl + "pytest.png"],
+    ["Bruno", this.baseTechUrl + "bruno.png"],
+    ["DevTools", this.baseTechUrl + "devtools.png"],
+    ["Testing Library", this.baseTechUrl + "testinglibrary.png"],
+    ["Jasmine & Karma", this.baseTechUrl + "jasmine.png"],
+    ["xUnit", this.baseTechUrl + "xunit.png"],
+    ["Shouldly", this.baseTechUrl + "shouldly.png"],
+    ["NSubsitute", this.baseTechUrl + "nsubstitute.png"],
+
+    ["Deno", this.baseTechUrl + "deno.png"],
+    ["Node.js", this.baseTechUrl + "node.png"],
+
+    ["Git", this.baseTechUrl + "git.png"],
+    ["Docker", this.baseTechUrl + "docker.png"],
+    ["Plastic SCM", this.baseTechUrl + "plastic.png"],
+
+    ["Unity 3D", this.baseTechUrl + "unity.png"],
+  ])
 
   prog_languages: Map<string, Icon> = new Map([
     ["C#", this.baseLangUrl + "cs.png"],
@@ -86,35 +127,4 @@ export class About {
   ])
 
 
-  techs2: Map<string, Icon> = new Map([
-    ["Jira", this.baseTechUrl + "jira.png"],
-    ["SquashTM", this.baseTechUrl + "squash.png"],
-
-    ["SonarQube Community", this.baseTechUrl + "sonarqube.png"],
-
-    [".NET", this.baseTechUrl + "dotnet.png"],
-    ["Bruno", null],
-    ["DevTools", null],
-
-    // ["ASP.NET", this.baseTechUrl + "aspnet.png"],
-    // ["Entity", null],
-    ["FlaUI", this.baseTechUrl + "flaui.png"],
-    ["Playwright", this.baseTechUrl + "playwright.png"],
-    // ["Selenium", null],
-    ["PostGreSQL", this.baseTechUrl + "postgresql.png"],
-    ["SQLite", this.baseTechUrl + "sqlite.png"],
-    ["Blazor", this.baseTechUrl + "blazor.png"],
-    ["Angular", this.baseTechUrl + "angular.png"],
-    ["Testing Library", this.baseTechUrl + "testinglibrary.png"],
-    ["Jasmine", this.baseTechUrl + "jasmine.png"],
-    ["xUnit", this.baseTechUrl + "xunit.png"],
-    ["Shouldly", this.baseTechUrl + "shouldly.png"],
-    ["NSubsitute", this.baseTechUrl + "nsubstitute.png"],
-    ["Deno", this.baseTechUrl + "deno.png"],
-    ["Node.js", this.baseTechUrl + "node.png"],
-    ["Git", this.baseTechUrl + "git.png"],
-    ["Docker", this.baseTechUrl + "docker.png"],
-    ["Plastic SCM", this.baseTechUrl + "plastic.png"],
-    ["Unity 3D", this.baseTechUrl + "unity.png"],
-  ])
 }
